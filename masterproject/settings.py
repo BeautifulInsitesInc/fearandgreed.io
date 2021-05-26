@@ -70,10 +70,11 @@ WSGI_APPLICATION = 'masterproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
     }
 }
+
+DATABASES['default'] = dj_database_url.config(default='postgres://hgmxzgzwfpblmh:edfc21692556fe89e8c55058993572c850df5796e2e8be5728e9382b93b7a6ee@ec2-174-129-225-160.compute-1.amazonaws.com:5432/d6pc5vduejq10p')
 
 
 # Password validation
