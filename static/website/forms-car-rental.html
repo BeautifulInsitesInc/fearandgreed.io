@@ -21,8 +21,6 @@
 	<link rel="stylesheet" href="css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-
 	<!-- Document Title
 	============================================= -->
 	<title>Car Rental - Forms | Canvas</title>
@@ -1576,7 +1574,7 @@
 								<div class="card bg-light topmargin-sm">
 									<div class="card-body">
 										<h4 class="mb-3 d-block">Your Price</h4>
-										<h2 class="car-rent-price h1 font-weight-semibold">$0</h2>
+										<h2 class="car-rent-price h1 fw-semibold">$0</h2>
 										<div class="line line-sm"></div>
 										<ul class="iconlist mb-0">
 											<li class="h6 pb-1"><i class="icon-line-circle-check"></i> Free 1st Class Insurance</li>
@@ -1600,8 +1598,8 @@
 									<div class="col-12">
 										<label>Select a Car:</label>
 										<div class="row car-list btn-group">
-											<label class="car-image pr-0 col-6 col-md-3">
-												<div class="ml-0">
+											<label class="car-image pe-0 col-6 col-md-3">
+												<div class="ms-0">
 													<input type="radio" name="car-rental-selected-car" class="required" id="car-rental-cars-creta" autocomplete="off" data-price="30" value="Creta"> Creta
 													<img src="images/forms/car/1.png" alt="Image">
 												</div>
@@ -1615,7 +1613,7 @@
 											</label>
 
 											<label class="car-image px-0 col-6 col-md-3">
-												<div class="ml-3 ml-md-2">
+												<div class="ms-3 ms-md-2">
 													<input type="radio" name="car-rental-selected-car" class="required" id="car-rental-cars-fortuner" autocomplete="off" data-price="52" value="Fortuner"> Fortuner
 												<img src="images/forms/car/3.png" alt="Image">
 												</div>
@@ -1633,22 +1631,22 @@
 										<div class="row input-daterange">
 											<div class="col-md-6 form-group">
 												<label for="car-rental-pickup-date">Pickup Date:</label>
-												<input type="text" name="car-rental-pickup-date" id="car-rental-pickup-date" class="form-control input-datepicker text-left required" value="" placeholder="Select Pickup Date">
+												<input type="text" name="car-rental-pickup-date" id="car-rental-pickup-date" class="form-control input-datepicker text-start required" value="" placeholder="Select Pickup Date">
 											</div>
 											<div class="col-md-6 form-group">
 												<label for="car-rental-dropoff-date">Drop Off Date:</label>
-												<input type="text" name="car-rental-dropoff-date" id="car-rental-dropoff-date" class="form-control input-datepicker text-left" value="" placeholder="Select Drop-Off Date">
+												<input type="text" name="car-rental-dropoff-date" id="car-rental-dropoff-date" class="form-control input-datepicker text-start" value="" placeholder="Select Drop-Off Date">
 											</div>
 										</div>
 									</div>
 									<div class="col-md-6 form-group">
 										<label for="car-rental-pickup-address" class="mb-3">Pickup Location<small class="text-danger">*</small></label><br>
-										<div class="btn-group my-tab btn-group-toggle nav" data-toggle="buttons">
-											<a href="#tab-pickup-airport" class="btn btn-outline-secondary flex-fill" data-toggle="tab">
-												<input type="radio" name="car-rental-pickup-address" id="car-rental-pickup-airport" class="required" value="">Airport
+										<div class="btn-group my-tab nav" role="group">
+											<a href="#tab-pickup-airport" class="btn btn-outline-secondary flex-fill" data-bs-toggle="tab">
+												<input type="radio" name="car-rental-pickup-address" class="btn-check" id="car-rental-pickup-airport" value="">Airport
 											</a>
-											<a href="#tab-pickup-hotel" class="btn btn-outline-secondary flex-fill" data-toggle="tab">
-												<input type="radio" name="car-rental-pickup-address" id="car-rental-pickup-hotel" class="required" value="">Hotel
+											<a href="#tab-pickup-hotel" class="btn btn-outline-secondary flex-fill" data-bs-toggle="tab">
+												<input type="radio" class="btn-check" name="car-rental-pickup-address" id="car-rental-pickup-hotel" value="">Hotel
 											</a>
 										</div>
 
@@ -1666,12 +1664,12 @@
 
 									<div class="col-md-6 form-group">
 										<label for="car-rental-dropoff-address" class="mb-3">Drop-Off Location<small class="text-danger">*</small></label><br>
-										<div class="btn-group my-tab btn-group-toggle nav" data-toggle="buttons">
-											<a href="#tab-dropoff-airport" class="btn btn-outline-secondary flex-fill" data-toggle="tab">
-												<input type="radio" name="car-rental-dropoff-address" id="car-rental-dropoff-airport" value="Airport">Airport
+										<div class="btn-group my-tab nav" role="group">
+											<a href="#tab-dropoff-airport" class="btn btn-outline-secondary flex-fill" data-bs-toggle="tab">
+												<input type="radio" class="btn-check" name="car-rental-dropoff-address" id="car-rental-dropoff-airport" value="Airport">Airport
 											</a>
-											<a href="#tab-dropoff-hotel" class="btn btn-outline-secondary flex-fill" data-toggle="tab">
-												<input type="radio" name="car-rental-dropoff-address" id="car-rental-dropoff-hotel" value="">Hotel
+											<a href="#tab-dropoff-hotel" class="btn btn-outline-secondary flex-fill" data-bs-toggle="tab">
+												<input type="radio" class="btn-check" name="car-rental-dropoff-address" id="car-rental-dropoff-hotel" value="">Hotel
 											</a>
 										</div>
 										<div class="tab-content">
@@ -1866,13 +1864,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -1916,12 +1910,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>

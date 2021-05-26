@@ -457,4 +457,4 @@ body:not(.dark) #header:not(.dark) #header-wrap:not(.dark) .menu-container > .me
 	border-radius: 0;
 }
 
-[data-toggle="collapse"][aria-expanded="true"] { display: none; }
+[data-bs-toggle="collapse"][aria-expanded="true"] { display: none; }

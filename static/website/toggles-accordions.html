@@ -1793,48 +1793,78 @@
 
 							<h4>Bootstrap Accordion</h4>
 
-							<div id="accordion" role="tablist">
-								<div class="card">
-									<div class="card-header" role="tab" id="headingOne">
-										<h5 class="mb-0">
-											<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-												Collapsible Group Item #1
-											</a>
-										</h5>
+							<div class="accordion" id="accordionExample">
+								<div class="accordion-item">
+									<h2 class="mb-0" id="headingOne">
+									  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									    Accordion Item #1
+									  </button>
+									</h2>
+									<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+									  <div class="accordion-body">
+									    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+									  </div>
 									</div>
+								</div>
+								<div class="accordion-item">
+									<h2 class="mb-0" id="headingTwo">
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									    Accordion Item #2
+									  </button>
+									</h2>
+									<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+									  <div class="accordion-body">
+									    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+									  </div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<h2 class="mb-0" id="headingThree">
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									    Accordion Item #3
+									  </button>
+									</h2>
+									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+									  <div class="accordion-body">
+									    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+									  </div>
+									</div>
+								</div>
+							</div>
 
-									<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-										<div class="card-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
+							<div class="line"></div>
+
+							<h4>Bootstrap Accordion Flush</h4>
+
+							<div class="accordion accordion-flush" id="accordionFlushExample">
+								<div class="accordion-item">
+									<h2 class="mb-0" id="flush-headingOne">
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+									    Accordion Item #1
+									  </button>
+									</h2>
+									<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+									  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
 									</div>
 								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingTwo">
-										<h5 class="mb-0">
-											<a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-												Collapsible Group Item #2
-											</a>
-										</h5>
-									</div>
-									<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-										<div class="card-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
+								<div class="accordion-item">
+									<h2 class="mb-0" id="flush-headingTwo">
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+									    Accordion Item #2
+									  </button>
+									</h2>
+									<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+									  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
 									</div>
 								</div>
-								<div class="card">
-									<div class="card-header" role="tab" id="headingThree">
-										<h5 class="mb-0">
-											<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-												Collapsible Group Item #3
-											</a>
-										</h5>
-									</div>
-									<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-										<div class="card-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
+								<div class="accordion-item">
+									<h2 class="mb-0" id="flush-headingThree">
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+									    Accordion Item #3
+									  </button>
+									</h2>
+									<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+									  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
 									</div>
 								</div>
 							</div>
@@ -1844,10 +1874,10 @@
 							<h4>Collapse</h4>
 
 							<p>
-								<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+								<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 									Link with href
 								</a>
-								<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+								<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 									Button with data-target
 								</button>
 							</p>
@@ -1921,7 +1951,7 @@
 										<li></li>
 									</ul>
 
-									<a href="#" class="btn btn-secondary btn-sm float-right">Follow Us on Twitter</a>
+									<a href="#" class="btn btn-secondary btn-sm float-end">Follow Us on Twitter</a>
 
 								</div>
 
@@ -2074,13 +2104,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -2125,12 +2151,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>

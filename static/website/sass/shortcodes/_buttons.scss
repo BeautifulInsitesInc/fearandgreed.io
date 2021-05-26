@@ -21,7 +21,7 @@ $btn-prefix: button;
 	font-size: $button-font-size;
 	line-height: $button-l-height;
 	@include gradient-bg($button-theme-color);
-	color: color-yiq($button-theme-color);
+	color: $color-contrast-light;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -33,7 +33,7 @@ $btn-prefix: button;
 		width: 16px;
 		text-align: center;
 	}
-	&.text-right {
+	&.text-end {
 		i { margin: 0 0 0 $button-icon-margin; }
 	}
 	body:not(.device-touch) & {
@@ -65,7 +65,7 @@ $btn-prefix: button;
 		font-size: $button-mini-font-size;
 		line-height: $button-mini-l-height;
 		i { margin-right: $button-icon-margin - 2; }
-		&.text-right i { margin: 0 0 0 $button-icon-margin - 2; }
+		&.text-end i { margin: 0 0 0 $button-icon-margin - 2; }
 	}
 
 	&-small {
@@ -73,7 +73,7 @@ $btn-prefix: button;
 		font-size: $button-sm-font-size;
 		line-height: $button-sm-l-height;
 		i { margin-right: $button-icon-margin - 1; }
-		&.text-right i { margin: 0 0 0 $button-icon-margin - 1; }
+		&.text-end i { margin: 0 0 0 $button-icon-margin - 1; }
 	}
 
 	&-large {
@@ -90,7 +90,7 @@ $btn-prefix: button;
 		i {
 			margin-right: $button-icon-margin + 3;
 		}
-		&.text-right i { margin: 0 0 0 $button-icon-margin + 3; }
+		&.text-end i { margin: 0 0 0 $button-icon-margin + 3; }
 	}
 
 	&-desc {
@@ -116,7 +116,7 @@ $btn-prefix: button;
 			text-align: center;
 			margin-right: 12px;
 		}
-		&.text-right i { margin: 0 0 0 12px; }
+		&.text-end i { margin: 0 0 0 12px; }
 		div { display: inline-block; }
 	}
 
@@ -213,13 +213,13 @@ $btn-prefix: button;
 			background-color: rgba(0,0,0,0.1);
 		}
 		&.#{$btn-prefix}-border i { top: -2px; }
-		&.text-right i {
+		&.text-end i {
 			left: auto;
 			right: -$button-reveal-icon;
 		}
 		&.#{$btn-prefix}-3d i,
 		&.#{$btn-prefix}-rounded i { border-radius: $button-rounded 0 0 $button-rounded;
-			&.text-right i { border-radius: 0 $button-rounded $button-rounded 0; }
+			&.text-end i { border-radius: 0 $button-rounded $button-rounded 0; }
 		}
 		span {
 			display: inline-block;
@@ -234,12 +234,12 @@ $btn-prefix: button;
 				left: -($button-reveal-mini-icon);
 				width: $button-reveal-mini-icon;
 			}
-			&.text-right i {
+			&.text-end i {
 				left: auto;
 				right: -($button-reveal-mini-icon);
 			}
 			&:hover span { left: round($button-reveal-mini-icon / 2); }
-			&.text-right:hover span { left: - round($button-reveal-mini-icon / 2); }
+			&.text-end:hover span { left: - round($button-reveal-mini-icon / 2); }
 		}
 
 		&.#{$btn-prefix}-small {
@@ -249,12 +249,12 @@ $btn-prefix: button;
 				left: -$button-reveal-small-icon;
 				width: $button-reveal-small-icon;
 			}
-			&.text-right i {
+			&.text-end i {
 				left: auto;
 				right: -$button-reveal-small-icon;
 			}
 			&:hover span { left: round($button-reveal-small-icon / 2); }
-			&.text-right:hover span { left: - round($button-reveal-small-icon / 2); }
+			&.text-end:hover span { left: - round($button-reveal-small-icon / 2); }
 		}
 
 		&.#{$btn-prefix}-large {
@@ -264,12 +264,12 @@ $btn-prefix: button;
 				left: -($button-reveal-lg-icon);
 				width: ($button-reveal-lg-icon);
 			}
-			&.text-right i {
+			&.text-end i {
 				left: auto;
 				right: -($button-reveal-lg-icon);
 			}
 			&:hover span { left: round($button-reveal-lg-icon / 2); }
-			&.text-right:hover span { left: - round($button-reveal-lg-icon / 2); }
+			&.text-end:hover span { left: - round($button-reveal-lg-icon / 2); }
 		}
 
 		&.#{$btn-prefix}-xlarge {
@@ -279,21 +279,21 @@ $btn-prefix: button;
 				left: -($button-reveal-xl-icon);
 				width: ($button-reveal-xl-icon);
 			}
-			&.text-right i {
+			&.text-end i {
 				left: auto;
 				right: -($button-reveal-xl-icon);
 			}
 			&:hover span { left: round($button-reveal-xl-icon / 2); }
-			&.text-right:hover span { left: - round($button-reveal-xl-icon / 2); }
+			&.text-end:hover span { left: - round($button-reveal-xl-icon / 2); }
 		}
 
 		&:hover i { left: 0; }
-		&.text-right:hover i {
+		&.text-end:hover i {
 			left: auto;
 			right: 0;
 		}
 		&:hover span { left: round($button-reveal-icon / 2); }
-		&.text-right:hover span { left: - round($button-reveal-icon / 2); }
+		&.text-end:hover span { left: - round($button-reveal-icon / 2); }
 	}
 }
 
@@ -441,9 +441,7 @@ body:not(.device-touch) .#{$btn-prefix}-reveal span {
 @mixin buttons-color($colors) {
   @each $name, $hex in $colors {
 	.#{$btn-prefix}-#{$name} {
-		&:not(.button-border) {
-			@include gradient-bg($hex);
-		}
+		@include gradient-bg($hex);
 		&.#{$btn-prefix}-3d:hover,
 		&.#{$btn-prefix}-reveal:hover,
 		&.#{$btn-prefix}-border:hover,

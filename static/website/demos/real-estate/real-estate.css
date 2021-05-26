@@ -5,6 +5,10 @@
 
 @media (min-width: 992px) {
 
+	#header.header-size-md + .include-header.include-topbar {
+		margin-top: calc( -80px - 2px - 46px );
+	}
+
 	#top-bar.transparent-topbar {
 		background: transparent;
 		z-index: 399;
@@ -143,7 +147,7 @@
 	background-color: #F0AD4E;
 }
 
-.advanced-real-estate-tabs ul.tab-nav li.ui-tabs-active a .badge-warning { background-color: #2C3E50; }
+.advanced-real-estate-tabs ul.tab-nav li.ui-tabs-active a .badge.bg-warning { background-color: #2C3E50; }
 
 .advanced-real-estate-tabs ul.tab-nav li .badge { margin-left: 5px; }
 

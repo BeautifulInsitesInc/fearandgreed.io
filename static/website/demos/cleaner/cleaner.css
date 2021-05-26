@@ -93,15 +93,12 @@
 	letter-spacing: 0;
 }
 
-.btn-outline-secondary:not(:disabled):not(.disabled):not(.active):hover {
-	border-color: var(--themecolor, #335EEE);
-	color: var(--themecolor, #335EEE);
-	background-color: transparent;
-}
-
-.btn-outline-secondary:not(:disabled):not(.disabled):active,
-.btn-outline-secondary:not(:disabled):not(.disabled).active,
-.show > .btn-outline-secondary.dropdown-toggle {
+.btn-check:checked + .btn-outline-secondary,
+.btn-check:active +
+.btn-outline-secondary,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active,
+.btn-outline-secondary.dropdown-toggle.show {
 	background-color: var(--themecolor, #335EEE);
 	border-color: var(--themecolor, #335EEE);
 }

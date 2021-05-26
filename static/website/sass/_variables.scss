@@ -128,23 +128,6 @@ $zindex:								10;
 $grid-gutter-width:          			30px !default;
 $container-padding-x: 					$grid-gutter-width / 2 !default;
 
-$grid-breakpoints: (
-	xs: 0,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1440px
-);
-
-// Container Break Points
-$container-max-widths: (
-	sm: 540px,
-	md: 720px,
-	lg: 960px,
-	xl: 1140px,
-	xxl: 1320px
-);
 
 $spacer: 1rem !default;
 $spacers: () !default;
@@ -896,19 +879,6 @@ $gotoTop-hover-color:					$theme-color;
 
 $gotoTop-hidden-sm:						true;
 
-
-//-------------------- Toast Notifications --------------------//
-
-$toast-bacground-color:					#030303;
-$toast-color:							$white;
-$toast-hover-color:						#CCC;
-$toast-position-gutter:					12px;
-$toast-close-offset: 					0.3em;
-$toast-close-font-size:					1.25rem;
-
-$toast-container:						300px;
-$toast-container-padding:				20px 25px;
-$toast-container-radius:				3px;
 
 //-------------------- Portfolio --------------------//
 

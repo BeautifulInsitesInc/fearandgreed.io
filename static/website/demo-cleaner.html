@@ -110,7 +110,7 @@
 		<header id="header" class="full-header header-size-md border-0" data-sticky-shrink="false">
 
 			<div id="header-wrap">
-				<div class="container-fluid pr-0">
+				<div class="container-fluid pe-0">
 					<div class="header-row">
 
 						<!-- Logo
@@ -125,14 +125,14 @@
 						</div>
 
 						<div class="header-misc">
-							<a href="#section-price" data-scrollto="#section-price" data-offset="60" class="button button-light text-dark font-weight-semibold"><i class="icon-dollar-sign"></i> Cost Calculate</a>
+							<a href="#section-price" data-scrollto="#section-price" data-offset="60" class="button button-light text-dark fw-semibold"><i class="icon-dollar-sign"></i> Cost Calculate</a>
 						</div>
 
 						<!-- Primary Navigation
 						============================================= -->
 						<nav class="primary-menu">
 
-							<ul class="menu-container border-right-0 mr-0">
+							<ul class="menu-container border-end-0 me-0">
 								<li class="menu-item active">
 									<a class="menu-link" href="#"><div>Home</div></a>
 								</li>
@@ -183,52 +183,52 @@
 											</div>
 										</div>
 
-										<div class="col-sm-6 input-group form-group">
-											<div class="input-group-prepend">
+										<div class="col-sm-6">
+											<div class="input-group form-group">
 												<span class="input-group-text bg-color text-white"><img src="demos/cleaner/images/icons/cleaner2.svg" alt="" width="20"></span>
+												<select class="required form-select" name="form-cleaning-service" id="form-cleaning-service">
+													<option value="" disabled selected>-- Select Your Service --</option>
+													<option value="Home Cleaning">Home Cleaning</option>
+													<option value="Office Cleaning">Office Cleaning</option>
+													<option value="Window Cleaning">Window Cleaning</option>
+													<option value="Garden Maintenance">Garden Maintenance</option>
+												</select>
 											</div>
-											<select class="required custom-select" name="form-cleaning-service" id="form-cleaning-service">
-												<option value="" disabled selected>-- Select Your Service --</option>
-												<option value="Home Cleaning">Home Cleaning</option>
-												<option value="Office Cleaning">Office Cleaning</option>
-												<option value="Window Cleaning">Window Cleaning</option>
-												<option value="Garden Maintenance">Garden Maintenance</option>
-											</select>
 										</div>
 
-										<div class="col-sm-6 input-group form-group">
-											<div class="input-group-prepend">
+										<div class="col-sm-6">
+											<div class="input-group form-group">
 												<span class="input-group-text bg-color text-white"><i class="icon-line2-map"></i></span>
+												<input type="text" name="form-cleaning-location" id="form-cleaning-location" class="form-control required" value="" placeholder="Location">
 											</div>
-											<input type="text" name="form-cleaning-location" id="form-cleaning-location" class="form-control required" value="" placeholder="Location">
 										</div>
 
-										<div class="col-sm-6 input-group form-group">
-											<div class="input-group-prepend">
+										<div class="col-sm-6">
+											<div class="input-group form-group">
 												<span class="input-group-text bg-color text-white"><i class="icon-line2-calendar"></i></span>
+												<input type="text" class="form-control cleaning-date datetimepicker-input required" name="form-cleaning-date-&-time" id="form-cleaning-date" value="Select your Date & Time">
 											</div>
-											<input type="text" class="form-control cleaning-date datetimepicker-input required" name="form-cleaning-date-&-time" id="form-cleaning-date" value="Select your Date & Time">
 										</div>
 
-										<div class="col-sm-6 form-group input-group">
-											<div class="input-group-prepend">
+										<div class="col-sm-6">
+											<div class="form-group input-group">
 												<span class="input-group-text bg-color text-white"><i class="icon-line2-layers"></i></span>
+												<input type="number" name="form-cleaning-area" min="200" id="form-cleaning-area" class="form-control required" value="" placeholder="Area (sqft.)">
 											</div>
-											<input type="number" name="form-cleaning-area" min="200" id="form-cleaning-area" class="form-control required" value="" placeholder="Area (sqft.)">
 										</div>
 
-										<div class="col-sm-6 input-group form-group">
-											<div class="input-group-prepend">
+										<div class="col-sm-6">
+											<div class="input-group form-group">
 												<span class="input-group-text bg-color text-white"><i class="icon-line2-envelope-letter"></i></span>
+												<input type="email" name="form-cleaning-email" id="form-cleaning-email" class="form-control required" value="" placeholder="Your Email">
 											</div>
-											<input type="email" name="form-cleaning-email" id="form-cleaning-email" class="form-control required" value="" placeholder="Your Email">
 										</div>
 
-										<div class="col-sm-6 input-group form-group">
-											<div class="input-group-prepend">
+										<div class="col-sm-6">
+											<div class="input-group form-group">
 												<span class="input-group-text bg-color text-white"><i class="icon-line2-call-out"></i></span>
+												<input type="text" name="form-cleaning-phone" id="form-cleaning-phone" class="form-control required" value="" placeholder="Contact Number">
 											</div>
-											<input type="text" name="form-cleaning-phone" id="form-cleaning-phone" class="form-control required" value="" placeholder="Contact Number">
 										</div>
 
 										<input type="text" class="d-none" id="form-cleaning-botcheck" name="form-cleaning-botcheck" value="" />
@@ -237,7 +237,7 @@
 										<input type="hidden" name="html_title" value="Cleaning">
 
 										<div class="col-12">
-											<button type="submit" name="form-cleaning-submit" class="btn btn-lg bg-color text-white font-weight-semibold btn-block mt-2">Book Now</button>
+											<button type="submit" name="form-cleaning-submit" class="btn btn-lg bg-color text-white fw-semibold w-100 mt-2">Book Now</button>
 										</div>
 
 									</form>
@@ -271,9 +271,9 @@
 								<div class="fbox-img position-relative">
 									<img src="demos/cleaner/images/icons/book.svg" alt="Book Icon" height="160">
 								</div>
-								<h2 class="topmargin-sm h5 mb-3 nott font-weight-semibold ls0"><span>1.</span> Book your Cleaner &amp; Time</h2>
+								<h2 class="topmargin-sm h5 mb-3 nott fw-semibold ls0"><span>1.</span> Book your Cleaner &amp; Time</h2>
 								<p>Seamlessly e-enable value-added deliverables and progressive models. Enthusiastically whiteboard fully tested channels.</p>
-								<a href="#" class="btn second-bg-color px-3 font-weight-semibold">Get Started <i class="icon-line-arrow-right"></i></a>
+								<a href="#" class="btn second-bg-color px-3 fw-semibold">Get Started <i class="icon-line-arrow-right"></i></a>
 							</div>
 						</div>
 
@@ -282,7 +282,7 @@
 								<div class="fbox-img position-relative">
 									<img src="demos/cleaner/images/icons/confirm3.svg" alt="Confirm Icon" height="160">
 								</div>
-								<h2 class="topmargin-sm h5 mb-3 nott font-weight-semibold ls0"><span>2.</span> Confirm Your Booking</h2>
+								<h2 class="topmargin-sm h5 mb-3 nott fw-semibold ls0"><span>2.</span> Confirm Your Booking</h2>
 								<p>Credibly enable market positioning resources after principle-centered customer service. Competently negotiate interdependent.</p>
 							</div>
 						</div>
@@ -292,7 +292,7 @@
 								<div class="fbox-img position-relative">
 									<img src="demos/cleaner/images/icons/enjoy.svg" alt="Relax Icon" height="160">
 								</div>
-								<h2 class="topmargin-sm h5 mb-3 nott font-weight-semibold ls0"><span>3.</span> Relax &amp; Enjoy</h2>
+								<h2 class="topmargin-sm h5 mb-3 nott fw-semibold ls0"><span>3.</span> Relax &amp; Enjoy</h2>
 								<p>Quickly disintermediate multidisciplinary relationships via functional e-tailers. Collaboratively grow cutting-edge information without.</p>
 							</div>
 						</div>
@@ -303,7 +303,7 @@
 
 				<div class="center dark hero-diagonal topmargin-lg bottommargin-lg" style="padding: 170px 0">
 					<div class="container" style="max-width: 760px">
-						<h2 class="mb-4 h1 font-weight-normal">We make your Home Shine and Sparkle</h2>
+						<h2 class="mb-4 h1 fw-normal">We make your Home Shine and Sparkle</h2>
 						<span class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, mollitia, quam modi necessitatibus placeat dolores laudantium. Laudantium, eveniet, possimus.</span>
 					</div>
 				</div>
@@ -330,7 +330,7 @@
 									<img src="demos/cleaner/images/icons/cleaner-man.svg" alt="Cleaner Icon">
 								</div>
 								<div class="fbox-content">
-									<h3 class="nott font-weight-semibold ls0">100% Trusted Cleaners</h3>
+									<h3 class="nott fw-semibold ls0">100% Trusted Cleaners</h3>
 									<p>Stretch your Website to the Full Width or make it boxed to surprise your visitors.</p>
 								</div>
 							</div>
@@ -340,7 +340,7 @@
 									<img src="demos/cleaner/images/icons/cleaning-man.svg" alt="Cleaner Icon">
 								</div>
 								<div class="fbox-content">
-									<h3 class="nott font-weight-semibold ls0">820+ Over Cleaners</h3>
+									<h3 class="nott fw-semibold ls0">820+ Over Cleaners</h3>
 									<p>We have covered each &amp; everything in our Docs including Videos &amp; Screenshots.</p>
 								</div>
 							</div>
@@ -350,7 +350,7 @@
 									<img src="demos/cleaner/images/icons/guarantee.svg" alt="Cleaner Icon">
 								</div>
 								<div class="fbox-content">
-									<h3 class="nott font-weight-semibold ls0">Satisfaction Guarantee</h3>
+									<h3 class="nott fw-semibold ls0">Satisfaction Guarantee</h3>
 									<p>Display your Content attractively using Parallax Sections with HTML5 Videos.</p>
 								</div>
 							</div>
@@ -364,7 +364,7 @@
 									<img src="demos/cleaner/images/icons/product.svg" alt="Cleaner Icon">
 								</div>
 								<div class="fbox-content">
-									<h3 class="nott font-weight-semibold ls0">Eco-Friendly Products</h3>
+									<h3 class="nott fw-semibold ls0">Eco-Friendly Products</h3>
 									<p>Canvas provides support for Native HTML5 Videos that can be added to a Background.</p>
 								</div>
 							</div>
@@ -374,7 +374,7 @@
 									<img src="demos/cleaner/images/icons/time.svg" alt="Cleaner Icon">
 								</div>
 								<div class="fbox-content">
-									<h3 class="nott font-weight-semibold ls0">Saves Your Time</h3>
+									<h3 class="nott fw-semibold ls0">Saves Your Time</h3>
 									<p>Complete control on each &amp; every element that provides endless customization.</p>
 								</div>
 							</div>
@@ -384,7 +384,7 @@
 									<img src="demos/cleaner/images/icons/price.svg" alt="Cleaner Icon">
 								</div>
 								<div class="fbox-content">
-									<h3 class="nott font-weight-semibold ls0">Flat Rate Price</h3>
+									<h3 class="nott fw-semibold ls0">Flat Rate Price</h3>
 									<p>Change your Website's Primary Scheme instantly by simply adding the dark class.</p>
 								</div>
 							</div>
@@ -437,19 +437,18 @@
 
 											<div class="col-12 form-group mb-4">
 												<label class="mb-3">Others Requirment: <small class="nott ls0 text-black-50">(Select Multiples)*</small></label><br>
-												<div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
-													<label for="clean-form-others-clean-garden" class="btn btn-outline-secondary px-4 font-weight-semibold ls0 nott">
-														<input type="checkbox" name="clean-form-others[]" class="form-check-input" id="clean-form-others-clean-garden" data-price="4" value="Clean Garden"> Clean Garden
-													</label>
-													<label for="clean-form-others-play-room" class="btn btn-outline-secondary px-4 font-weight-semibold ls0 nott">
-														<input type="checkbox" name="clean-form-others[]" class="form-check-input" id="clean-form-others-play-room" data-price="5" value="Play Room"> Play Room
-													</label>
-													<label for="clean-form-others-garage" class="btn btn-outline-secondary px-4 font-weight-semibold ls0 nott">
-														<input type="checkbox" name="clean-form-others[]" class="form-check-input" id="clean-form-others-garage" data-price="5.4" value="Garage"> Garage
-													</label>
-													<label for="clean-form-others-gym" class="btn btn-outline-secondary px-4 font-weight-semibold ls0 nott">
-														<input type="checkbox" name="clean-form-others[]" class="form-check-input" id="clean-form-others-gym" data-price="4.2" value="Gym"> Gym
-													</label>
+												<div class="btn-group w-100" role="group">
+													<input type="checkbox" name="clean-form-others[]" class="btn-check" id="clean-form-others-clean-garden" data-price="4" autocomplete="off" value="Clean Garden">
+													<label for="clean-form-others-clean-garden" class="btn btn-outline-secondary px-4 fw-semibold ls0 nott">Clean Garden</label>
+
+													<input type="checkbox" name="clean-form-others[]" class="btn-check" id="clean-form-others-play-room" data-price="5" autocomplete="off" value="Play Room">
+													<label for="clean-form-others-play-room" class="btn btn-outline-secondary px-4 fw-semibold ls0 nott">Play Room</label>
+
+													<input type="checkbox" name="clean-form-others[]" class="btn-check" id="clean-form-others-garage" data-price="5.4" autocomplete="off" value="Garage">
+													<label for="clean-form-others-garage" class="btn btn-outline-secondary px-4 fw-semibold ls0 nott">Garage</label>
+
+													<input type="checkbox" name="clean-form-others[]" class="btn-check" id="clean-form-others-gym" data-price="4.2" autocomplete="off" value="Gym">
+													<label for="clean-form-others-gym" class="btn btn-outline-secondary px-4 fw-semibold ls0 nott">Gym</label>
 												</div>
 											</div>
 
@@ -477,24 +476,24 @@
 									<div class="col-lg-4 mt-4 mt-md-0">
 										<div class="card text-center border-0 shadow-sm">
 											<div class="card-body pt-4 pb-0">
-												<h4 class="card-title font-weight-semibold text-uppercase mb-0">Final Cost</h4>
+												<h4 class="card-title fw-semibold text-uppercase mb-0">Final Cost</h4>
 												<!-- Price Value -->
-												<div class="total-price color font-weight-bold py-3"></div>
+												<div class="total-price color fw-bold py-3"></div>
 											</div>
 											<div class="line my-1"></div>
 											<div class="card-body py-4">
-												<ul class="iconlist ml-0 op-08">
+												<ul class="iconlist ms-0 op-08">
 													<li class="mb-2">100% Trusted Cleaners</li>
 													<li class="mb-2">Over 820+ Cleaners</li>
 													<li class="mb-2">No Hidden Charges</li>
 													<li>Credit Cards Accepted</li>
 												</ul>
-												<button type="submit" name="clean-form-submit" class="button button-rounded button-light button-large second-bg-color text-dark btn-block ls0 m-0">Book Now</button>
+												<button type="submit" name="clean-form-submit" class="button button-rounded button-light button-large second-bg-color text-dark w-100 ls0 m-0">Book Now</button>
 											</div>
 										</div>
 
 										<div class="fancy-title title-border mt-5">
-											<h4 class="font-weight-semibold">Pricing FAQs</h4>
+											<h4 class="fw-semibold">Pricing FAQs</h4>
 										</div>
 
 										<div class="toggle">
@@ -503,7 +502,7 @@
 													<i class="toggle-closed icon-line-circle-plus"></i>
 													<i class="toggle-open icon-line-circle-minus"></i>
 												</div>
-												<div class="toggle-title font-weight-semibold">
+												<div class="toggle-title fw-semibold">
 													How can I Pay?
 												</div>
 											</div>
@@ -516,7 +515,7 @@
 													<i class="toggle-closed icon-line-circle-plus"></i>
 													<i class="toggle-open icon-line-circle-minus"></i>
 												</div>
-												<div class="toggle-title font-weight-semibold">
+												<div class="toggle-title fw-semibold">
 													How can I Pay?
 												</div>
 											</div>
@@ -529,14 +528,14 @@
 													<i class="toggle-closed icon-line-circle-plus"></i>
 													<i class="toggle-open icon-line-circle-minus"></i>
 												</div>
-												<div class="toggle-title font-weight-semibold">
+												<div class="toggle-title fw-semibold">
 													Can I cancel my Plan?
 												</div>
 											</div>
 											<div class="toggle-content text-black-50">Minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
 										</div>
 
-										<p class="font-weight-semibold">Want to know more? <a href="#"><u>See the full FAQs</u></a> <i class="icon-caret-right1 color"></i></p>
+										<p class="fw-semibold">Want to know more? <a href="#"><u>See the full FAQs</u></a> <i class="icon-caret-right1 color"></i></p>
 									</div>
 								</div>
 							</form>
@@ -547,7 +546,7 @@
 				<div class="section m-0 dark" style="background: linear-gradient(rgba(51,94,238,0.8), rgba(51,94,238,0.8)), url('demos/cleaner/images/section2.jpg') center center no-repeat; background-size: cover; padding: 80px 0 230px">
 					<div class="container">
 						<div class="heading-block center mx-auto" style="max-width: 700px">
-							<h5 class="font-weight-normal text-uppercase ls2">High Rated Cleaners</h5>
+							<h5 class="fw-normal text-uppercase ls2">High Rated Cleaners</h5>
 							<h2 class="mb-2 nott ls0">820+ Over Cleaners Completed their Jobs.</h2>
 							<span>Authoritatively create performance based web services for exceptional products. Dynamically disseminate customized.</span>
 						</div>
@@ -616,13 +615,13 @@
 								<img src="demos/cleaner/images/icons/reviews.svg" alt="Review Image" width="400">
 								<div class="row mt-5">
 									<div class="col-6">
-										<h3 class="color font-weight-normal h1 mb-3">1100+</h3>
-										<h5 class="text-muted font-weight-normal">Jobs Done, consectetur adipisicing elit. Eveniet, sunt.</h5>
+										<h3 class="color fw-normal h1 mb-3">1100+</h3>
+										<h5 class="text-muted fw-normal">Jobs Done, consectetur adipisicing elit. Eveniet, sunt.</h5>
 									</div>
 
 									<div class="col-6">
-										<h3 class="color font-weight-normal h1 mb-3">4.9/5.0</h3>
-										<h5 class="text-muted font-weight-normal">Average review across all of our company Service lines.</h5>
+										<h3 class="color fw-normal h1 mb-3">4.9/5.0</h3>
+										<h5 class="text-muted fw-normal">Average review across all of our company Service lines.</h5>
 									</div>
 								</div>
 							</div>
@@ -640,7 +639,7 @@
 												<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
 											</div>
 											<div class="testi-content">
-												<h4 class="font-weight-normal">Synergistically pontificate scalable manufactured products after worldwide customer service. Phosfluorescently harness open-source relationships rather than competitive internal or "organic" sources. Globally.</h4>
+												<h4 class="fw-normal">Synergistically pontificate scalable manufactured products after worldwide customer service. Phosfluorescently harness open-source relationships rather than competitive internal or "organic" sources. Globally.</h4>
 												<div class="testi-meta"> John Doe<span>XYZ Inc.</span></div>
 											</div>
 										</div>
@@ -651,7 +650,7 @@
 												<a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
 											</div>
 											<div class="testi-content">
-												<h4 class="font-weight-normal">Progressively scale front-end models whereas standardized technology. Collaboratively disintermediate user friendly communities vis-a-vis cross-platform results. Completely productize client-centric benefits vis-a-vis optimal.</h4>
+												<h4 class="fw-normal">Progressively scale front-end models whereas standardized technology. Collaboratively disintermediate user friendly communities vis-a-vis cross-platform results. Completely productize client-centric benefits vis-a-vis optimal.</h4>
 												<div class="testi-meta"> Bailey Wonger<span>Apple Inc.</span></div>
 											</div>
 										</div>
@@ -667,8 +666,8 @@
 						<img src="demos/cleaner/images/icons/apply.svg" alt="Apply Icon" height="200" class="mb-4">
 						<h2 style="font-size: 38px">Try out now &amp; Apply for Cleaner</h2>
 						<p class="mb-5" style="font-size: 1.125rem;">Dynamically predominate B2B resources whereas interdependent strategic theme areas. Completely underwhelm out-of-the-box functionalities for worldwide e-tailers. Dynamically restore fully researched architectures.</p>
-						<a href="#" class="btn btn-lg bg-color text-white font-weight-semibold px-4">Get Started</a>
-						<a href="#" class="btn btn-lg bg-white font-weight-semibold color px-4 ml-2">Contact us</a>
+						<a href="#" class="btn btn-lg bg-color text-white fw-semibold px-4">Get Started</a>
+						<a href="#" class="btn btn-lg bg-white fw-semibold color px-4 ms-2">Contact us</a>
 					</div>
 				</div>
 
@@ -698,15 +697,15 @@
 							<p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque repellat possimus sapiente officiis alias, eius libero fugiat ex error tempore.</p>
 							<div class="clear"></div>
 							<div>
-								<a href="#" class="social-icon mr-2 si-light si-rounded si-small si-facebook">
+								<a href="#" class="social-icon me-2 si-light si-rounded si-small si-facebook">
 									<i class="icon-facebook"></i>
 									<i class="icon-facebook"></i>
 								</a>
-								<a href="#" class="social-icon mr-2 si-light si-rounded si-small si-twitter">
+								<a href="#" class="social-icon me-2 si-light si-rounded si-small si-twitter">
 									<i class="icon-twitter"></i>
 									<i class="icon-twitter"></i>
 								</a>
-								<a href="#" class="social-icon mr-2 si-light si-rounded si-small si-youtube">
+								<a href="#" class="social-icon me-2 si-light si-rounded si-small si-youtube">
 									<i class="icon-youtube"></i>
 									<i class="icon-youtube"></i>
 								</a>
@@ -802,8 +801,8 @@
 		jQuery(document).ready(function() {
 
 			jQuery('.cleaning-date').daterangepicker({
-				"buttonClasses": "button button-rounded button-mini nott ls0 font-weight-semibold",
-				"applyClass": "button-color m-0 ml-1",
+				"buttonClasses": "button button-rounded button-mini nott ls0 fw-semibold",
+				"applyClass": "button-color m-0 ms-1",
 				"cancelClass": "bg-danger m-0 text-light",
 				singleDatePicker: true,
 				startDate: moment().startOf('hour'),

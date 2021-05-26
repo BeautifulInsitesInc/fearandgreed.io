@@ -8,10 +8,6 @@
 /* ----------------------------------------------------------------
 	Bootstrap Adjustments
 -----------------------------------------------------------------*/
-.container {
-	@include media-breakpoint-up(xxl) { max-width: map-get($container-max-widths, "xxl"); }
-}
-
 /*	Custom Bootstap Columns */
 
 .col-1-5,

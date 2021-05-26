@@ -49,7 +49,7 @@
 
 						<!-- Logo
 						============================================= -->
-						<div id="logo" class="mr-lg-5">
+						<div id="logo" class="me-lg-5">
 							<a href="index.html" class="standard-logo" data-dark-logo="demos/business/images/logo-dark.png"><img src="demos/business/images/logo.png" alt="Canvas Logo"></a>
 							<a href="index.html" class="retina-logo" data-dark-logo="demos/business/images/logo-dark@2x.png"><img src="demos/business/images/logo@2x.png" alt="Canvas Logo"></a>
 						</div><!-- #logo end -->
@@ -64,7 +64,7 @@
 
 						<!-- Primary Navigation
 						============================================= -->
-						<nav class="primary-menu with-arrows mr-lg-auto">
+						<nav class="primary-menu with-arrows me-lg-auto">
 
 							<ul class="menu-container align-self-start">
 								<li class="menu-item"><span class="menu-bg col-auto align-self-start d-flex"></span></li>
@@ -94,12 +94,12 @@
 
 				<div class="section m-0 p-0 row align-items-stretch clearfix" style="background-color: rgba(198,192,156, 0.15);">
 					<div class="col-lg-4 dark d-flex flex-column align-items-center center justify-content-center" style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('demos/nonprofit/images/others/event.jpg') center center repeat; background-size: cover; min-height: 300px;">
-						<h2 class="display-4 px-4 font-weight-bold mb-4 d-block">Events Overview</h2>
+						<h2 class="display-4 px-4 fw-bold mb-4 d-block">Events Overview</h2>
 					</div>
 					<div class="col-lg-8 col-padding">
 						<div class="events-calendar">
 							<div class="events-calendar-header clearfix">
-								<div class="calendar-month-year d-flex text-left justify-content-between align-items-center w-100">
+								<div class="calendar-month-year d-flex text-start justify-content-between align-items-center w-100">
 									<div>
 										<span id="calendar-month" class="calendar-month text-dark"></span>
 										<span id="calendar-year" class="calendar-year text-dark"></span>
@@ -130,8 +130,8 @@
 				============================================= -->
 				<div class="footer-widgets-wrap dark clearfix" style="background: radial-gradient(rgba(0,45,64,.5), rgba(0,45,64,.1), rgba(0,45,64,.5)), url('demos/nonprofit/images/others/footer.jpg') repeat center center / cover;  padding: 150px 0">
 					<div class="mx-auto center" style="max-width: 700px;">
-						<h2 class="display-2 font-weight-bold text-white mb-0 ls1 font-secondary mb-4"><i class="icon-heart d-block mb-3"></i>Help the Homeless &amp; Hungry People.</h2>
-						<a href="demo-nonprofit-causes-single.html" class="button button-rounded button-xlarge button-white bg-white button-light text-dark shadow nott ls0 ml-0 mt-5">Donate Now</a>
+						<h2 class="display-2 fw-bold text-white mb-0 ls1 font-secondary mb-4"><i class="icon-heart d-block mb-3"></i>Help the Homeless &amp; Hungry People.</h2>
+						<a href="demo-nonprofit-causes-single.html" class="button button-rounded button-xlarge button-white bg-white button-light text-dark shadow nott ls0 ms-0 mt-5">Donate Now</a>
 					</div>
 				</div>
 
@@ -184,29 +184,23 @@
 						</div>
 						<div id="floating-contact-submitted" class="p-5 center">
 							<i class="icon-line-mail h1 color"></i>
-							<h4 class="font-weight-normal mb-0 font-body">Thank You for Contact Us! Our Team will contact you asap on your email Address.</h4>
+							<h4 class="fw-normal mb-0 font-body">Thank You for Contact Us! Our Team will contact you asap on your email Address.</h4>
 						</div>
 						<form class="mb-0" id="floating-contact" action="include/form.php" method="post" enctype="multipart/form-data">
 							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text bg-transparent"><i class="icon-user-alt"></i></span>
-								</div>
+								<span class="input-group-text bg-transparent"><i class="icon-user-alt"></i></span>
 								<input type="text" name="floating-contact-name" id="floating-contact-name" class="form-control required" value="" placeholder="Enter your Full Name">
 							</div>
 							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text bg-transparent"><i class="icon-at"></i></span>
-								</div>
+								<span class="input-group-text bg-transparent"><i class="icon-at"></i></span>
 								<input type="email" name="floating-contact-email" id="floating-contact-email" class="form-control required" value="" placeholder="Enter your Email Address">
 							</div>
 							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text bg-transparent"><i class="icon-comment21"></i></span>
-								</div>
+								<span class="input-group-text bg-transparent"><i class="icon-comment21"></i></span>
 								<textarea name="floating-contact-message" id="floating-contact-message" class="form-control required" cols="30" rows="4"></textarea>
 							</div>
 							<input type="hidden" id="floating-contact-botcheck" name="floating-contact-botcheck" value="" />
-							<button type="submit" name="floating-contact-submit" class="btn btn-dark btn-block py-2">Send Message</button>
+							<button type="submit" name="floating-contact-submit" class="btn btn-dark w-100 py-2">Send Message</button>
 							<input type="hidden" name="prefix" value="floating-contact-">
 							<input type="hidden" name="subject" value="Messgae From Floating Contact">
 							<input type="hidden" name="html_title" value="Floating Contact Message">

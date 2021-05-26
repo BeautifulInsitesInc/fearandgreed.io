@@ -21,8 +21,6 @@
 	<link rel="stylesheet" href="css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-
 	<!-- Document Title
 	============================================= -->
 	<title>Booking Registration - Forms | Canvas</title>
@@ -89,16 +87,18 @@
 			color: #FFF !important;
 		}
 
-		.dark #booking-registration .border-form-control:not(.not-dark):focus,
-		.dark #booking-registration .border-form-control:not(.not-dark):active { border-bottom-color:rgba(255,255,255,1) !important; }
+		.dark #booking-registration .border-form-control:not(.not-dark):not(.error):focus,
+		.dark #booking-registration .border-form-control:not(.not-dark):not(.error):active { border-bottom-color:rgba(255,255,255,1) !important; }
 
 		#booking-registration button { background-color: #FFB701; }
 		.fcolor { color: #FFB701 !important; }
-		#booking-registration .list-group-item.active { background-color: #FFF; }
-		#booking-registration .list-group-item:hover:not(.active) { background-color: rgba(255, 255, 255, 0.01); }
 
-		#booking-registration .list-group-item.active h4,
-		#booking-registration .list-group-item.active h3 { color: #062639; }
+		#booking-registration .btn-check:checked + .list-group-item { background-color: #FFF; }
+
+		/* #booking-registration .btn-check + .list-group-item:hover { background-color: rgba(255, 255, 255, 0.01); } */
+
+		#booking-registration .btn-check:checked + .list-group-item h4,
+		#booking-registration .btn-check:checked + .list-group-item h3 { color: #062639; }
 	</style>
 
 </head>
@@ -1560,7 +1560,7 @@
 				<div class="container clearfix">
 
 					<h3 class="center">Hotel Booking Form</h3>
-					<div class="card border-0 shadow-lg rounded-lg" style="background-color: #062639;">
+					<div class="card border-0 shadow-lg rounded-3" style="background-color: #062639;">
 						<img class="card-img-top" src="https://source.unsplash.com/fAcloeaPA_c/1600x600/" alt="Image">
 
 						<div class="card-body dark" style="padding: 60px">
@@ -1572,10 +1572,10 @@
 
 									<div class="col-12 bottommargin">
 										<div id="tab-reservation" class="list-group list-group-horizontal d-flex justify-content-center" role="tablist">
-											<a class="list-group-item list-group-item-action w-auto mx-0 mx-sm-3 active" data-toggle="list" href="#tab-reservation-select-dates" role="tab">1. Select Dates</a>
-											<a class="list-group-item list-group-item-action w-auto mx-0 mx-sm-3" data-toggle="list" href="#tab-reservation-select-room" role="tab">2. Select Room</a>
-											<a class="list-group-item list-group-item-action w-auto mx-0 mx-sm-3" data-toggle="list" href="#tab-reservation-contact" role="tab">3. Contact Details</a>
-											<a class="list-group-item list-group-item-action w-auto mx-0 mx-sm-3" data-toggle="list" href="#tab-reservation-payment" role="tab">4. Make Payment</a>
+											<a class="list-group-item list-group-item-action w-auto mx-0 mx-sm-3 active" data-bs-toggle="list" href="#tab-reservation-select-dates" role="tab">1. Select Dates</a>
+											<a class="list-group-item list-group-item-action w-auto mx-0 mx-sm-3" data-bs-toggle="list" href="#tab-reservation-select-room" role="tab">2. Select Room</a>
+											<a class="list-group-item list-group-item-action w-auto mx-0 mx-sm-3" data-bs-toggle="list" href="#tab-reservation-contact" role="tab">3. Contact Details</a>
+											<a class="list-group-item list-group-item-action w-auto mx-0 mx-sm-3" data-bs-toggle="list" href="#tab-reservation-payment" role="tab">4. Make Payment</a>
 										</div>
 									</div>
 
@@ -1588,11 +1588,11 @@
 														<div class="row">
 															<div class="col-md-6 col-6">
 																<label for="booking-registration-check-in">Check In:</label>
-																<input type="text" value="" class="sm-form-control required border-form-control text-left" id="booking-registration-check-in" name="booking-registration-check-in" placeholder="DD/MM/YYYY">
+																<input type="text" value="" class="sm-form-control required border-form-control text-start" id="booking-registration-check-in" name="booking-registration-check-in" placeholder="DD/MM/YYYY">
 															</div>
 															<div class="col-md-6 col-6">
 																<label for="booking-registration-check-out">Check Out:</label>
-																<input type="text" value="" class="sm-form-control required border-form-control text-left" id="booking-registration-check-out" name="booking-registration-check-out" placeholder="DD/MM/YYYY">
+																<input type="text" value="" class="sm-form-control required border-form-control text-start" id="booking-registration-check-out" name="booking-registration-check-out" placeholder="DD/MM/YYYY">
 															</div>
 														</div>
 													</div>
@@ -1619,7 +1619,7 @@
 														</div>
 													</div>
 													<div class="col-12">
-														<a href="#" class="button button-rounded button-light bg-white tab-action-btn-next text-dark float-right">Select Room</a>
+														<a href="#" class="button button-rounded button-light bg-white tab-action-btn-next text-dark float-end">Select Room</a>
 													</div>
 												</div>
 											</div>
@@ -1627,27 +1627,29 @@
 											<div class="tab-pane fade" id="tab-reservation-select-room" role="tabpanel" aria-labelledby="tab-reservation-select-room">
 												<div class="row">
 													<div class="col-12">
-														<div class="list-group btn-group-vertical btn-group-toggle mb-3" data-toggle="buttons">
-															<label class="btn list-group-item active d-flex justify-content-between align-items-center lh-condensed">
+														<div class="list-group btn-group-vertical mb-3" role="group">
+															<input class="btn-check" type="radio" name="booking-registration-room-type" data-item="Standard" id="booking-registration-room-standard" checked value="Standard Room">
+															<label for="booking-registration-room-standard" class="btn list-group-item d-flex justify-content-between align-items-center mb-0">
 																<span class="d-block">
-																	<input type="radio" name="booking-registration-room-type" data-item="Standard" id="booking-registration-room-standard" checked value="Standard Room">
 																	<h4 class="my-0">Standard Room</h4>
 																	<small class="text-muted">Garden View</small>
 																</span>
 																<h4 class="mb-0 fcolor">$21</h4>
 															</label>
-															<label class="btn list-group-item d-flex justify-content-between align-items-center lh-condensed">
+
+															<input class="btn-check" type="radio" name="booking-registration-room-type" data-item="Deluxe" id="booking-registration-room-deluxe" value="Deluxe Room">
+															<label for="booking-registration-room-deluxe" class="btn list-group-item d-flex justify-content-between align-items-center mb-0">
 																<span class="d-block">
-																	<input type="radio" name="booking-registration-room-type" data-item="Deluxe" id="booking-registration-room-deluxe" value="Deluxe Room">
 																	<h4 class="my-0">Deluxe Room</h4>
 																	<small class="text-muted">City View</small>
 																	<small class="text-muted">With Breakfast</small>
 																</span>
 																<h4 class="mb-0 fcolor">$29</h4>
 															</label>
-															<label class="btn list-group-item d-flex justify-content-between align-items-center lh-condensed">
+
+															<input class="btn-check" type="radio" name="booking-registration-room-type" data-item="Deluxe" id="booking-registration-room-super-deluxe" value="Super Deluxe Room">
+															<label for="booking-registration-room-super-deluxe" class="btn list-group-item d-flex justify-content-between align-items-center mb-0">
 																<span class="d-block">
-																	<input type="radio" name="booking-registration-room-type" data-item="Super Deluxe" id="booking-registration-room-super-deluxe" value="Super Deluxe Room">
 																	<h4 class="my-0">Super Deluxe Room</h4>
 																	<small class="text-muted">Sea View</small>
 																	<small class="text-muted">With Breakfast</small>
@@ -1657,7 +1659,7 @@
 														</div>
 													</div>
 													<div class="col-12">
-														<a href="#" class="button button-rounded button-light bg-white tab-action-btn-next text-dark float-right">Select Details</a>
+														<a href="#" class="button button-rounded button-light bg-white tab-action-btn-next text-dark float-end">Select Details</a>
 													</div>
 												</div>
 											</div>
@@ -1678,18 +1680,18 @@
 													</div>
 													<div class="col-12 mb-4">
 														<label>Full  Address:</label>
-														<input type="text" name="booking-registration-address" id="checkout-form-shipping-street" class="form-control border-form-control required" value="" placeholder="Enter Your Full Address">
+														<input type="text" name="booking-registration-address" id="booking-registration-address" class="sm-form-control border-form-control required" value="" placeholder="Enter Your Address">
 													</div>
 													<div class="col-12 mb-4">
 														<label>Post Code:</label>
-														<input type="number" name="booking-registration-post-code" id="checkout-form-shipping-post-code" class="form-control border-form-control required" value="" placeholder="Enter Your Post Code">
+														<input type="text" name="booking-registration-postal" id="booking-registration-postal" class="sm-form-control border-form-control required" value="" placeholder="Enter Your Postal Code">
 													</div>
 													<div class="col-12 mb-4">
 														<label>Phone:</label><br>
-														<input type="text" name="booking-registration-phone" id="checkout-form-shipping-phone" class="form-control border-form-control required" value="" placeholder="Enter Your Phone Number">
+														<input type="text" name="booking-registration-phone" id="booking-registration-phone" class="sm-form-control border-form-control required" value="" placeholder="Enter Your Phone Number">
 													</div>
 													<div class="col-12">
-														<a href="#" class="button button-rounded button-light bg-white tab-action-btn-next text-dark float-right">Make Payments</a>
+														<a href="#" class="button button-rounded button-light bg-white tab-action-btn-next text-dark float-end">Make Payments</a>
 													</div>
 												</div>
 											</div>
@@ -1711,14 +1713,14 @@
 													</div>
 													<div class="col-4 mb-4">
 														<label>Expired On:</label>
-														<input type="text" value="" id="booking-registration-card-exp" class="sm-form-control required border-form-control text-left" name="booking-registration-card-exp" placeholder="MM/YYYY">
+														<input type="text" value="" id="booking-registration-card-exp" class="sm-form-control required border-form-control text-start" name="booking-registration-card-exp" placeholder="MM/YYYY">
 													</div>
 
 													<div class="col-12 d-none">
 														<input type="text" id="booking-registration-botcheck" name="booking-registration-botcheck" value="" />
 													</div>
 													<div class="col-12">
-														<button type="submit" name="booking-registration-submit" class="button button-rounded button-light bg-white text-dark float-right">Book Now</button>
+														<button type="submit" name="booking-registration-submit" class="button button-rounded button-light bg-white text-dark float-end">Book Now</button>
 													</div>
 
 													<input type="hidden" name="prefix" value="booking-registration-">
@@ -1729,16 +1731,16 @@
 									<div class="col-lg-3">
 										<div class="list-group list-group-flush">
 											<div class="list-group-item">
-												<h5 class="mb-0">Duration: <span class="time-value font-weight-semibold fcolor ml-1">Choose Date</span></h5>
+												<h5 class="mb-0">Duration: <span class="time-value fw-semibold fcolor ms-1">Choose Date</span></h5>
 											</div>
 											<div class="list-group-item">
-												<h5 class="mb-0">Rooms: <span class="rooms-value font-weight-semibold fcolor ml-1">1 Room</span></h5>
+												<h5 class="mb-0">Rooms: <span class="rooms-value fw-semibold fcolor ms-1">1 Room</span></h5>
 											</div>
 											<div class="list-group-item">
-												<h5 class="mb-0">Persons: <span class="persons-value font-weight-semibold fcolor ml-1">1 Person</span></h5>
+												<h5 class="mb-0">Persons: <span class="persons-value fw-semibold fcolor ms-1">1 Person</span></h5>
 											</div>
 											<div class="list-group-item">
-												<h5 class="mb-0">Room Type: <span class="room-type-value font-weight-semibold fcolor ml-1">Standard Room</span></h5>
+												<h5 class="mb-0">Room Type: <span class="room-type-value fw-semibold fcolor ms-1">Standard Room</span></h5>
 											</div>
 										</div>
 									</div>
@@ -1894,13 +1896,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -1945,12 +1943,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>
@@ -2025,15 +2023,20 @@
 	<script>
 		jQuery(document).ready( function(){
 
-			$('.tab-action-btn-next').click(function(e) {
+			$('.tab-action-btn-next').on( 'click', function(e) {
 				let elementTab = $(this).parents('.tab-pane');
 				$('#booking-registration').valid();
 				let errors = elementTab.find('.required.error').length;
+				console.log( errors );
 				if( errors > 0 ) {
 					$('#tab-reservation > .active').nextAll('a').addClass('disabled');
 					return false;
 				} else {
 					$('#tab-reservation > .active').next('a').removeClass('disabled').trigger('click');
+					let nextTabEl = $('#tab-reservation > .active').next('a').removeClass('disabled'),
+						tab = new bootstrap.Tab( nextTabEl.get(0) );
+
+					tab.show();
 					e.preventDefault();
 					return false;
 				}

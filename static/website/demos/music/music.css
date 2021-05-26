@@ -125,28 +125,25 @@
 
 .songs-list {
 	position: relative;
-	width: 100%;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-direction: row;
 	flex-direction: row;
-	-webkit-justify-content: flex-start;
-	justify-content: flex-start;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
 	align-self: center;
+	width: 100%;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	padding: 15px 0;
 }
 
 .songs-list [class*=songs-] { align-self: center; }
 
-.songs-list .songs-number { width: 6%; }
-
-.songs-list .songs-image { max-width: 21%; }
+.songs-list .songs-image { max-width: 20%; }
 
 .songs-list .songs-image img { padding: 0 10px; }
 
 .songs-list .songs-name {
-	width: 55%;
 	padding-right: 15px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -173,7 +170,6 @@
 }
 
 .songs-list .songs-button {
-	width: 13%;
 	text-align: center;
 }
 

@@ -1546,7 +1546,7 @@
 							<form action="#" method="post" class="mb-0">
 								<div class="bottommargin-sm">
 									<label for="">Select With Drop Down</label>
-									<select class="select-1 form-control" style="width:100%;">
+									<select class="select-1 form-select" style="width:100%;">
 										<optgroup label="Alaskan/Hawaiian Time Zone">
 											<option value="AK">Alaska</option>
 											<option value="HI">Hawaii</option>
@@ -1612,7 +1612,7 @@
 
 								<div class="bottommargin-sm">
 									<label for="">Select Multiple Values</label>
-									<select class="select-1 form-control" multiple="multiple" style="width:100%;">
+									<select class="select-1 form-select" multiple="multiple" style="width:100%;">
 										<optgroup label="Alaskan/Hawaiian Time Zone">
 											<option value="AK">Alaska</option>
 											<option value="HI">Hawaii</option>
@@ -1679,10 +1679,10 @@
 								<div class="bottommargin-sm">
 									<label for="">Loading array data</label>
 									<div style="margin-bottom: 10px;">
-										<select class="select-data-array form-control bottommargin-sm" style="width:100%;"></select>
+										<select class="select-data-array form-select bottommargin-sm" style="width:100%;"></select>
 									</div>
 									<div>
-										<select class="select-data-array-selected form-control" style="width:100%;">
+										<select class="select-data-array-selected form-select" style="width:100%;">
 											<option value="2" selected="selected">duplicate</option>
 										</select>
 									</div>
@@ -1692,7 +1692,7 @@
 									<label for="">Enabled/Disbled Buttons</label>
 									<div class="s2-example" style="background-color: #F9F9F9; padding: 20px; border-radius: 2px;">
 										<div style="margin-bottom: 10px;">
-											<select class="select-disabled form-control" disabled="" tabindex="-1" aria-hidden="true" style="width:100%;">
+											<select class="select-disabled form-select" disabled="" tabindex="-1" aria-hidden="true" style="width:100%;">
 												<optgroup label="Alaskan/Hawaiian Time Zone">
 													<option value="AK" selected="selected">Alaska</option>
 													<option value="HI">Hawaii</option>
@@ -1757,7 +1757,7 @@
 										</div>
 
 										<div style="margin-bottom: 10px;">
-											<select class="select-disabled form-control" disabled="" multiple="" tabindex="-1" aria-hidden="true" style="width:100%;">
+											<select class="select-disabled form-select" disabled="" multiple="" tabindex="-1" aria-hidden="true" style="width:100%;">
 												<optgroup label="Alaskan/Hawaiian Time Zone">
 													<option value="AK">Alaska</option>
 													<option value="HI">Hawaii</option>
@@ -1833,7 +1833,7 @@
 
 								<div class="bottommargin-sm">
 									<label for="">Disabled Result</label>
-									<select class="select-1 form-control" style="width:100%;">
+									<select class="select-1 form-select" style="width:100%;">
 										<option value="AZ">Arizona</option>
 										<option value="CO" disabled="disabled">Colorado(disabled)</option>
 										<option value="ID">Idaho</option>
@@ -1845,7 +1845,7 @@
 
 								<div class="bottommargin-sm">
 									<label for="">Select Without Search</label>
-									<select class="select-hide form-control bottommargin-sm" style="width:100%;">
+									<select class="select-hide form-select bottommargin-sm" style="width:100%;">
 										<option value="CT">Connecticut</option>
 										<option value="DE">Delaware</option>
 										<option value="FL">Florida</option>
@@ -1859,7 +1859,7 @@
 
 								<div class="bottommargin-sm">
 									<label for="">Tagging Support</label>
-									<select class="select-tags form-control" multiple="" tabindex="-1" aria-hidden="true" style="width:100%;">
+									<select class="select-tags form-select" multiple="" tabindex="-1" aria-hidden="true" style="width:100%;">
 										<option selected="selected">orange</option>
 										<option>white</option>
 										<option selected="selected">purple</option>
@@ -1869,8 +1869,12 @@
 									</select>
 								</div>
 
+								<div class="line"></div>
+
+								<h3>Select Splitter</h3>
+
 								<div>
-									<select size="1" class="form-control selectsplitter" style="width:100%;">
+									<select size="1" class="form-select selectsplitter" style="width:100%;">
 										<optgroup label="Category 1">
 											<option value="1">Choice 1</option>
 											<option value="2">Choice 2</option>
@@ -2096,13 +2100,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -2147,12 +2147,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>
@@ -2219,8 +2219,6 @@
 
 	<!-- Select-Boxes Plugin -->
 	<script src="js/components/select-boxes.js"></script>
-
-	<!-- Select-Splitter Plugin -->
 	<script src="js/components/selectsplitter.js"></script>
 
 	<!-- Footer Scripts

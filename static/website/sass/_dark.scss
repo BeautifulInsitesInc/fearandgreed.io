@@ -1739,19 +1739,26 @@ body #side-panel.dark {
 .dark output { color: darken($text-color-dark, 33.33); }
 
 .dark .form-control:not(.not-dark),
-.dark .sm-form-control:not(.not-dark) {
+.dark .sm-form-control:not(.not-dark),
+.dark .form-select:not(.not-dark) {
 	color: darken($text-color-dark, 33.33);
 	background-color: rgba($black,0.2);
 	border-color: rgba($white,0.15);
 }
 
-.dark .form-control:not(.not-dark) option,
-.dark .sm-form-control:not(.not-dark) option { background-color: $body-bg-darker; }
+.dark .form-select:not(.not-dark) {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23AAAAAA' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.dark .form-select:not(.not-dark) option,
+.dark .sm-form-select:not(.not-dark) option { background-color: $body-bg-darker; }
 
 .dark .form-control:not(.not-dark):active,
 .dark .form-control:not(.not-dark):focus,
 .dark .sm-form-control:not(.not-dark):active,
-.dark .sm-form-control:not(.not-dark):focus {
+.dark .sm-form-control:not(.not-dark):focus,
+.dark .form-select:not(.not-dark):active,
+.dark .form-select:not(.not-dark):focus {
 	background-color: rgba($black,0.3);
 	border-color: rgba($white,0.25) !important;
 }
@@ -1763,9 +1770,13 @@ body #side-panel.dark {
 .dark .sm-form-control:not(.not-dark):-ms-input-placeholder { color: darken($text-color-dark, 53.33); }
 .dark .sm-form-control:not(.not-dark)::-webkit-input-placeholder { color: darken($text-color-dark, 53.33); }
 
+
 .dark .form-control:not(.not-dark)[disabled],
 .dark .form-control:not(.not-dark)[readonly],
 .dark fieldset[disabled] .form-control:not(.not-dark),
+.dark .form-select:not(.not-dark)[disabled],
+.dark .form-select:not(.not-dark)[readonly],
+.dark fieldset[disabled] .form-select:not(.not-dark),
 .dark .sm-form-control:not(.not-dark)[disabled],
 .dark .sm-form-control:not(.not-dark)[readonly],
 .dark fieldset[disabled] .sm-form-control:not(.not-dark) { background-color: rgba($white,0.1); }
@@ -1777,6 +1788,9 @@ body #side-panel.dark {
 .dark .form-control.error:not(.not-dark)::-moz-placeholder { color: rgba(228,44,62,0.6); }
 .dark .form-control.error:not(.not-dark):-ms-input-placeholder { color: rgba(228,44,62,0.6); }
 .dark .form-control.error:not(.not-dark)::-webkit-input-placeholder { color: rgba(228,44,62,0.6); }
+.dark .form-select.error:not(.not-dark)::-moz-placeholder { color: rgba(228,44,62,0.6); }
+.dark .form-select.error:not(.not-dark):-ms-input-placeholder { color: rgba(228,44,62,0.6); }
+.dark .form-select.error:not(.not-dark)::-webkit-input-placeholder { color: rgba(228,44,62,0.6); }
 
 .dark .dropdown-menu {
 	background-color: darken($body-bg-dark, 1.96);
@@ -2088,14 +2102,14 @@ body #side-panel.dark {
 
 .dark .card-default > .card-footer + .collapse .card-body { border-bottom-color: rgba($white,0.15); }
 
-.dark .close {
+.dark .btn-close {
 	opacity: 1;
 	color: rgba($black,0.15);
 	text-shadow: 0 1px 0 rgba($black,0.2);
 }
 
-.dark .close:hover,
-.dark .close:focus {
+.dark .btn-close:hover,
+.dark .btn-close:focus {
 	color: rgba($black,0.4);
 }
 

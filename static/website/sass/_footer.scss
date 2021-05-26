@@ -37,10 +37,6 @@
 	.sticky-footer #page-title,
 	.sticky-footer #content { z-index: 2; }
 
-	.sticky-footer #content {
-		transform: translate3d(0,0,0);
-	}
-
 	.sticky-footer #footer {
 		position: sticky;
 		top: auto;

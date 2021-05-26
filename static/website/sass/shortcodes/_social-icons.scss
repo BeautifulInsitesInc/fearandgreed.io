@@ -106,7 +106,7 @@ $sicon-prefix: social-icon;
 
 .si-dark {
 	@include gradient-bg($social-icon-dark-color);
-	color: color-yiq($social-icon-dark-color) !important;
+	color: $color-contrast-light !important;
 	border-color: transparent;
 }
 

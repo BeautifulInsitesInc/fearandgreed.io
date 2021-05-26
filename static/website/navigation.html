@@ -1601,7 +1601,7 @@
 								<li class="nav-item"><a class="nav-link" class="active" href="#">Home</a></li>
 								<li class="nav-item"><a class="nav-link" href="#">Help</a></li>
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
 									Dropdown
 									</a>
 									<ul class="dropdown-menu" role="menu">
@@ -1622,7 +1622,7 @@
 								<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
 								<li class="nav-item"><a class="nav-link" href="#">Help</a></li>
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
 									Dropdown
 									</a>
 									<ul class="dropdown-menu" role="menu">
@@ -1640,38 +1640,44 @@
 							<h3>Navbar</h3>
 
 							<nav class="navbar navbar-expand-lg navbar-light bg-light">
-								<a class="navbar-brand" href="#">Navbar</a>
-								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-								</button>
+								<div class="container-fluid">
+									<a class="navbar-brand" href="#">Navbar</a>
+									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+									</button>
 
-								<div class="collapse navbar-collapse" id="navbarSupportedContent">
-									<ul class="navbar-nav mr-auto">
-										<li class="nav-item active">
-											<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Link</a>
-										</li>
-										<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												Dropdown
-											</a>
-											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-												<a class="dropdown-item" href="#">Action</a>
-												<a class="dropdown-item" href="#">Another action</a>
-												<div class="dropdown-divider"></div>
-												<a class="dropdown-item" href="#">Something else here</a>
+									<div class="collapse navbar-collapse" id="navbarSupportedContent">
+										<ul class="navbar-nav me-auto">
+											<li class="nav-item active">
+												<a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Link</a>
+											</li>
+											<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													Dropdown
+												</a>
+												<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+													<a class="dropdown-item" href="#">Action</a>
+													<a class="dropdown-item" href="#">Another action</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#">Something else here</a>
+												</div>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link disabled" href="#">Disabled</a>
+											</li>
+										</ul>
+										<form class="row gx-3 align-items-center my-2 my-lg-0">
+											<div class="col">
+												<input class="form-control" type="search" placeholder="Search" aria-label="Search">
 											</div>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link disabled" href="#">Disabled</a>
-										</li>
-									</ul>
-									<form class="form-inline my-2 my-lg-0">
-										<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-										<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-									</form>
+											<div class="col-auto">
+												<button class="btn btn-outline-success" type="submit">Search</button>
+											</div>
+										</form>
+									</div>
 								</div>
 							</nav>
 
@@ -1680,11 +1686,17 @@
 							<h4>With Forms</h4>
 
 							<nav class="navbar navbar-light bg-light justify-content-between">
-								<a class="navbar-brand">Navbar</a>
-								<form class="form-inline m-0">
-									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-									<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-								</form>
+								<div class="container-fluid">
+									<a class="navbar-brand">Navbar</a>
+									<form class="row gx-3 align-items-center my-2 my-lg-0">
+										<div class="col">
+											<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+										</div>
+										<div class="col-auto">
+											<button class="btn btn-outline-success" type="submit">Search</button>
+										</div>
+									</form>
+								</div>
 							</nav>
 
 							<div class="line"></div>
@@ -1692,10 +1704,12 @@
 							<h4>With Buttons</h4>
 
 							<nav class="navbar navbar-light bg-light justify-content-between">
-								<a class="navbar-brand">Navbar</a>
-								<form class="form-inline m-0">
-									<button class="btn btn-outline-secondary" type="button">Sign In</button>
-								</form>
+								<div class="container-fluid">
+									<a class="navbar-brand">Navbar</a>
+									<form class="m-0">
+										<button class="btn btn-outline-secondary" type="button">Sign In</button>
+									</form>
+								</div>
 							</nav>
 
 							<div class="line"></div>
@@ -1703,25 +1717,27 @@
 							<h4>With Text</h4>
 
 							<nav class="navbar navbar-expand-lg navbar-light bg-light">
-								<a class="navbar-brand" href="#">Navbar w/ text</a>
-								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-								</button>
-								<div class="collapse navbar-collapse" id="navbarText">
-									<ul class="navbar-nav mr-auto">
-										<li class="nav-item active">
-											<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Features</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Pricing</a>
-										</li>
-									</ul>
-									<span class="navbar-text">
-										Navbar text with an inline element
-									</span>
+								<div class="container-fluid">
+									<a class="navbar-brand" href="#">Navbar w/ text</a>
+									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+									</button>
+									<div class="collapse navbar-collapse" id="navbarText">
+										<ul class="navbar-nav me-auto">
+											<li class="nav-item active">
+												<a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Features</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Pricing</a>
+											</li>
+										</ul>
+										<span class="navbar-text">
+											Navbar text with an inline element
+										</span>
+									</div>
 								</div>
 							</nav>
 
@@ -1730,110 +1746,128 @@
 							<h4>Color Schemes</h4>
 
 							<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-								<a class="navbar-brand" href="#">Navbar</a>
-								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-								</button>
+								<div class="container-fluid">
+									<a class="navbar-brand" href="#">Navbar</a>
+									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+									</button>
 
-								<div class="collapse navbar-collapse" id="navbarSupportedContent">
-									<ul class="navbar-nav mr-auto">
-										<li class="nav-item active">
-											<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Link</a>
-										</li>
-										<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												Dropdown
-											</a>
-											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-												<a class="dropdown-item" href="#">Action</a>
-												<a class="dropdown-item" href="#">Another action</a>
-												<div class="dropdown-divider"></div>
-												<a class="dropdown-item" href="#">Something else here</a>
+									<div class="collapse navbar-collapse" id="navbarSupportedContent1">
+										<ul class="navbar-nav me-auto">
+											<li class="nav-item active">
+												<a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Link</a>
+											</li>
+											<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													Dropdown
+												</a>
+												<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+													<a class="dropdown-item" href="#">Action</a>
+													<a class="dropdown-item" href="#">Another action</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#">Something else here</a>
+												</div>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link disabled" href="#">Disabled</a>
+											</li>
+										</ul>
+										<form class="row gx-3 align-items-center my-2 my-lg-0">
+											<div class="col">
+												<input class="form-control" type="search" placeholder="Search" aria-label="Search">
 											</div>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link disabled" href="#">Disabled</a>
-										</li>
-									</ul>
-									<form class="form-inline my-2 my-lg-0">
-										<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-										<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-									</form>
+											<div class="col-auto">
+												<button class="btn btn-outline-primary" type="submit">Search</button>
+											</div>
+										</form>
+									</div>
 								</div>
 							</nav>
 
 							<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
-								<a class="navbar-brand" href="#">Navbar</a>
-								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-								</button>
+								<div class="container-fluid">
+									<a class="navbar-brand" href="#">Navbar</a>
+									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+									</button>
 
-								<div class="collapse navbar-collapse" id="navbarSupportedContent">
-									<ul class="navbar-nav mr-auto">
-										<li class="nav-item active">
-											<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Link</a>
-										</li>
-										<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												Dropdown
-											</a>
-											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-												<a class="dropdown-item" href="#">Action</a>
-												<a class="dropdown-item" href="#">Another action</a>
-												<div class="dropdown-divider"></div>
-												<a class="dropdown-item" href="#">Something else here</a>
+									<div class="collapse navbar-collapse" id="navbarSupportedContent2">
+										<ul class="navbar-nav me-auto">
+											<li class="nav-item active">
+												<a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Link</a>
+											</li>
+											<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													Dropdown
+												</a>
+												<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+													<a class="dropdown-item" href="#">Action</a>
+													<a class="dropdown-item" href="#">Another action</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#">Something else here</a>
+												</div>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link disabled" href="#">Disabled</a>
+											</li>
+										</ul>
+										<form class="row gx-3 align-items-center my-2 my-lg-0">
+											<div class="col">
+												<input class="form-control" type="search" placeholder="Search" aria-label="Search">
 											</div>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link disabled" href="#">Disabled</a>
-										</li>
-									</ul>
-									<form class="form-inline my-2 my-lg-0">
-										<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-										<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-									</form>
+											<div class="col-auto">
+												<button class="btn btn-outline-light" type="submit">Search</button>
+											</div>
+										</form>
+									</div>
 								</div>
 							</nav>
 
 							<nav class="navbar navbar-expand-lg navbar-light mb-3" style="background-color: #e3f2fd;">
-								<a class="navbar-brand" href="#">Navbar</a>
-								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-								</button>
+								<div class="container-fluid">
+									<a class="navbar-brand" href="#">Navbar</a>
+									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent3" aria-controls="navbarSupportedContent3" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+									</button>
 
-								<div class="collapse navbar-collapse" id="navbarSupportedContent">
-									<ul class="navbar-nav mr-auto">
-										<li class="nav-item active">
-											<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#">Link</a>
-										</li>
-										<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												Dropdown
-											</a>
-											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-												<a class="dropdown-item" href="#">Action</a>
-												<a class="dropdown-item" href="#">Another action</a>
-												<div class="dropdown-divider"></div>
-												<a class="dropdown-item" href="#">Something else here</a>
+									<div class="collapse navbar-collapse" id="navbarSupportedContent3">
+										<ul class="navbar-nav me-auto">
+											<li class="nav-item active">
+												<a class="nav-link" href="#">Home <span class="visually-hidden">(current)</span></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Link</a>
+											</li>
+											<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													Dropdown
+												</a>
+												<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+													<a class="dropdown-item" href="#">Action</a>
+													<a class="dropdown-item" href="#">Another action</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#">Something else here</a>
+												</div>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link disabled" href="#">Disabled</a>
+											</li>
+										</ul>
+										<form class="row gx-3 align-items-center my-2 my-lg-0">
+											<div class="col">
+												<input class="form-control" type="search" placeholder="Search" aria-label="Search">
 											</div>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link disabled" href="#">Disabled</a>
-										</li>
-									</ul>
-									<form class="form-inline my-2 my-lg-0">
-										<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-										<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-									</form>
+											<div class="col-auto">
+												<button class="btn btn-outline-primary" type="submit">Search</button>
+											</div>
+										</form>
+									</div>
 								</div>
 							</nav>
 
@@ -1842,16 +1876,18 @@
 							<h4>External Content</h4>
 
 							<div class="pos-f-t">
-								<div class="collapse" id="navbarToggleExternalContent">
+								<div class="collapse" id="navbarToggleExternalContent4">
 									<div class="bg-dark p-4">
 										<h4 class="text-white mb-2">Collapsed content</h4>
 										<span class="text-muted">Toggleable via the navbar brand.</span>
 									</div>
 								</div>
 								<nav class="navbar navbar-dark bg-dark">
-									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-										<span class="navbar-toggler-icon"></span>
-									</button>
+									<div class="container-fluid">
+										<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent4" aria-controls="navbarToggleExternalContent4" aria-expanded="false" aria-label="Toggle navigation">
+											<span class="navbar-toggler-icon"></span>
+										</button>
+								</div>
 								</nav>
 							</div>
 
@@ -1919,7 +1955,7 @@
 										<li></li>
 									</ul>
 
-									<a href="#" class="btn btn-secondary btn-sm float-right">Follow Us on Twitter</a>
+									<a href="#" class="btn btn-secondary btn-sm float-end">Follow Us on Twitter</a>
 
 								</div>
 
@@ -2072,13 +2108,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -2123,12 +2155,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>

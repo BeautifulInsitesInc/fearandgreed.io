@@ -1649,7 +1649,7 @@ $photos = $instagram->get_public_photos($search_user_id);
 			<div class="content-wrap">
 				<div class="container clearfix">
 
-					<a href="rs-demos.html" class="btn btn-secondary btn-lg btn-block mx-auto" style="max-width: 20rem;"><i class="icon-line-arrow-left mr-2" style="position: relative; top: 1px;"></i> Back to All Demos</a>
+					<a href="rs-demos.html" class="btn btn-secondary btn-lg w-100 mx-auto" style="max-width: 20rem;"><i class="icon-line-arrow-left me-2" style="position: relative; top: 1px;"></i> Back to All Demos</a>
 
 				</div>
 			</div>
@@ -1847,12 +1847,12 @@ $photos = $instagram->get_public_photos($search_user_id);
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>

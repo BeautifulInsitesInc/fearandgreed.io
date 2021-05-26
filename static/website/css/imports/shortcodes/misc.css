@@ -944,3 +944,25 @@ input.switch-flat-xlarge.switch-toggle-flat + label::after {
 input.switch-flat-xlarge.switch-toggle-flat:checked + label::after {
   margin-left: 60px;
 }
+
+
+@media (min-width: 576px) {
+  .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+  }
+  .card-columns > * {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}

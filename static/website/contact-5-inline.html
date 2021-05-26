@@ -1604,15 +1604,15 @@
 
 							<!-- Modal Contact Form
 							============================================= -->
-							<a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-3d m-0 btn-block button-xlarge d-none d-md-block center">Click here to Send an Email</a>
-							<a href="#" data-toggle="modal" data-target="#contactFormModal" class="button button-3d m-0 btn-block d-block d-md-none center">Send an Email</a>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#contactFormModal" class="button button-3d m-0 w-100 button-xlarge d-none d-md-block center">Click here to Send an Email</a>
+							<a href="#" data-bs-toggle="modal" data-bs-target="#contactFormModal" class="button button-3d m-0 w-100 d-block d-md-none center">Send an Email</a>
 
 							<div class="modal fade" id="contactFormModal" tabindex="-1" role="dialog" aria-labelledby="contactFormModalLabel" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
 										<div class="modal-header">
 											<h4 class="modal-title" id="contactFormModalLabel">Send Us an Email</h4>
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
 										</div>
 										<div class="modal-body">
 
@@ -1684,7 +1684,7 @@
 
 										</div>
 										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 										</div>
 									</div><!-- /.modal-content -->
 								</div><!-- /.modal-dialog -->
@@ -1839,13 +1839,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -1890,12 +1886,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>

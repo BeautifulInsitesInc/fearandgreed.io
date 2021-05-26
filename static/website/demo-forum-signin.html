@@ -53,7 +53,7 @@
 							<a href="demo-forum.html" class="retina-logo"><img src="demos/forum/images/canvasforum@2x.png" alt="Canvas Logo"></a>
 						</div><!-- #logo end -->
 
-						<div class="header-misc ml-0 ml-md-2">
+						<div class="header-misc ms-0 ms-md-2">
 
 							<!-- Top Search
 							============================================= -->
@@ -64,7 +64,7 @@
 						</div>
 
 						<div class="header-misc">
-							<a href="demo-forum.html" class="button button-border border-default px-4 rounded-sm font-weight-medium nott ls0 m-0 px-3 h-op-09">Sign In</a>
+							<a href="demo-forum.html" class="button button-border border-default px-4 rounded-1 fw-medium nott ls0 m-0 px-3 h-op-09">Sign In</a>
 						</div>
 
 						<div id="primary-menu-trigger">
@@ -75,7 +75,7 @@
 						============================================= -->
 						<nav class="primary-menu">
 
-							<ul class="menu-container pr-0 pr-md-3">
+							<ul class="menu-container pe-0 pe-md-3">
 								<li class="menu-item"><a class="menu-link" href="demo-forum.html"><div>Home</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="demo-forum-single.html"><div>Topic Page</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="demo-forum-profile.html"><div>Profile</div></a></li>
@@ -138,7 +138,7 @@
 						<div class="cs-signin-form">
 							<div class="cs-signin-form-inner">
 								<div class="text-center">
-									<h3 class="h1 font-weight-bolder mb-3">Sign In</h3>
+									<h3 class="h1 fw-bolder mb-3">Sign In</h3>
 									<p class="text-smaller text-muted mb-4" style="line-height: 1.5;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, vel odio non dicta.</p>
 								</div>
 								<div class="d-flex justify-content-center mb-2">
@@ -165,33 +165,31 @@
 								<form id="login-form" name="login-form" class="mb-0 row" action="#" method="post">
 
 									<div class="col-12 form-group">
-										<label class="nott ls0 font-weight-normal mb-1" for="login-form-username">Username:</label>
-										<input type="text" id="login-form-username" class="form-control font-weight-semibold" placeholder="Username">
+										<label class="nott ls0 fw-normal mb-1" for="login-form-username">Username:</label>
+										<input type="text" id="login-form-username" class="form-control fw-semibold" placeholder="Username">
 									</div>
 									<div class="clear"></div>
 									<div class="col-12 form-group">
-										<label class="nott ls0 font-weight-normal mb-1" for="login-form-password">Password:</label>
+										<label class="nott ls0 fw-normal mb-1" for="login-form-password">Password:</label>
 										<div class="input-group">
-											<input id="login-form-password" type="password" class="form-control font-weight-semibold border-right-0" placeholder="Password" required="">
-											<div class="input-group-append">
-												<button class="btn" onclick="myFunction()" type="button"><i class="icon-line-eye text-smaller"></i></button>
-											</div>
+											<input id="login-form-password" type="password" class="form-control fw-semibold border-end-0" placeholder="Password" required="">
+											<button class="btn border" onclick="myFunction()" type="button"><i class="icon-line-eye text-smaller"></i></button>
 										</div>
 									</div>
 
 									<div class="col-12 d-flex justify-content-between">
 										<div class="form-check form-check-inline">
 											<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-											<label class="form-check-label nott ls0 mb-0 font-weight-semibold" for="inlineCheckbox2">Remember me</label>
+											<label class="form-check-label nott ls0 mb-0 fw-semibold" for="inlineCheckbox2">Remember me</label>
 										</div>
-										<a href="#" class="text-smaller font-weight-medium"><u>Forgot Password?</u></a>
+										<a href="#" class="text-smaller fw-medium"><u>Forgot Password?</u></a>
 									</div>
 
 									<div class="col-12 mt-4">
-										<button class="button button-large btn-block bg-alt py-2 rounded-sm font-weight-medium nott ls0 m-0" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+										<button class="button button-large w-100 bg-alt py-2 rounded-1 fw-medium nott ls0 m-0" id="login-form-submit" name="login-form-submit" value="login">Login</button>
 									</div>
 								</form>
-								<p class="mb-0 mt-4 text-center font-weight-semibold">Don't have an account? <a href="#"><u>Sign up</u></a></p>
+								<p class="mb-0 mt-4 text-center fw-semibold">Don't have an account? <a href="#"><u>Sign up</u></a></p>
 							</div>
 						</div>
 
@@ -259,7 +257,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-3 mt-5 mt-lg-0 text-center text-lg-right">
+						<div class="col-lg-3 mt-5 mt-lg-0 text-center text-lg-end">
 							<div class="widget clearfix">
 
 								<div class="row">
@@ -320,10 +318,10 @@
 		  var x = document.getElementById("login-form-password");
 		  if (x.type === "password") {
 		    x.type = "text";
-		    $("#login-form-password + .input-group-append").addClass('passowd-shown');
+		    $("#login-form-password + button").addClass('passowd-shown');
 		  } else {
 		    x.type = "password";
-		    $("#login-form-password + .input-group-append").removeClass('passowd-shown');
+		    $("#login-form-password + button").removeClass('passowd-shown');
 		  }
 		}
 	</script>

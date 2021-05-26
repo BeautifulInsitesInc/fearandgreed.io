@@ -24,8 +24,6 @@
 	<link rel="stylesheet" href="css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-
 	<!-- Document Title
 	============================================= -->
 	<title>Jobs - Forms | Canvas</title>
@@ -1587,15 +1585,14 @@
 											</div>
 											<div class="col-md-6 form-group">
 												<label>Gender:</label>
-												<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-													<label class="btn btn-outline-secondary ls0 nott">
-														<input type="radio" name="jobs-application-gender" id="jobs-application-gender-male" autocomplete="off" value="Male"> Male
-													</label>
-													<label class="btn btn-outline-secondary ls0 nott">
-														<input type="radio" name="jobs-application-gender" id="jobs-application-gender-female" autocomplete="off" value="Female"> Female
-													</label>
+												<div class="btn-group d-flex" data-bs-toggle="buttons">
+													<input type="radio" class="btn-check" name="jobs-application-gender" id="jobs-application-gender-male" value="Male">
+													<label class="btn btn-outline-secondary nott ls0" for="jobs-application-gender-male">Male</label>
+
+													<input type="radio" class="btn-check" name="jobs-application-gender" id="jobs-application-gender-female" value="Female">
+													<label class="btn btn-outline-secondary nott ls0" for="jobs-application-gender-female">Female</label>
 												</div>
-												<!-- <select class="form-control" name="jobs-application-gender" id="jobs-application-gender">
+												<!-- <select class="form-select" name="jobs-application-gender" id="jobs-application-gender">
 													<option value="">-- Select One --</option>
 													<option value="Male">Male</option>
 													<option value="Female">Female</option>
@@ -1604,7 +1601,7 @@
 											<div class="w-100"></div>
 											<div class="col-md-6 form-group">
 												<label>Type:</label>
-												<select class="form-control required" name="jobs-application-type" id="jobs-application-type">
+												<select class="form-select required" name="jobs-application-type" id="jobs-application-type">
 													<option value="">-- Select One --</option>
 													<option value="Part-Time">Part-Time</option>
 													<option value="Full-Time">Full-Time</option>
@@ -1614,7 +1611,7 @@
 											</div>
 											<div class="col-md-6 form-group">
 												<label>Experience:</label>
-												<select class="form-control required" name="jobs-application-experience" id="jobs-application-experience">
+												<select class="form-select required" name="jobs-application-experience" id="jobs-application-experience">
 													<option value="">-- Select One --</option>
 													<option value="Less than 1 Year">Less than 1 Year</option>
 													<option value="1-4 Years">1-4 Years</option>
@@ -1625,7 +1622,7 @@
 										</div>
 										<div class="form-group">
 											<label>Upload CV:</label>
-											<input type="file" id="jobs-application-resume" name="jobs-application-resume" class="file-loading required" data-show-preview="false" />
+											<input type="file" id="jobs-application-resume" name="jobs-application-resume" class="file-loading form-select required" data-show-preview="false" />
 										</div>
 										<div class="form-group">
 											<label>Describe Yourself:</label>
@@ -1643,7 +1640,7 @@
 								</form>
 							</div>
 
-							<div class="col-lg-6 pl-lg-5">
+							<div class="col-lg-6 ps-lg-5">
 								<p><span class="dropcap">F</span>oster best practices effectiveness inspire breakthroughs solve immunize turmoil. Policy dialogue peaceful The Elders rural global support. Process inclusive innovate readiness, public sector complexity. Lifting people up cornerstone partner, technology working families civic engagement activist recognize potential global network. Countries tackling solution respond change-makers tackle. Assistance, giving; fight against malnutrition experience in the field lasting change scalable. Empowerment long-term, fairness policy community progress social responsibility; Cesar Chavez recognition. Expanding community ownership visionary indicator pursue these aspirations accessibility. Achieve; worldwide, life-saving initiative facilitate. New approaches, John Lennon humanitarian relief fundraise vaccine Jane Jacobs community health workers Oxfam. Our ambitions informal economies.</p>
 
 								<blockquote class="topmargin bottommargin">
@@ -1809,13 +1806,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -1860,12 +1853,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>

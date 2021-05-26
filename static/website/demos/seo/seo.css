@@ -32,7 +32,7 @@
 	font-weight: 600;
 }
 
-.button:not(.btn-block):hover {
+.button:not(.w-100):hover {
 	transform: translateY(-1px);
 	box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
@@ -398,11 +398,11 @@ input.switch-toggle-round + label::after { border-radius: 4px }
     top: 0;
     left: 26px;
     z-index: 1;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 36px;
     margin-left: -13px;
     background-image: linear-gradient(#FFE640 0%, #fE9603 100%);
-    border: 8px solid #FFF;
+    border: 6px solid #FFF;
     border-radius: 50%;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     transition: border-color .3s ease;

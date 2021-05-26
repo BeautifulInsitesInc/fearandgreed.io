@@ -203,7 +203,7 @@
 	color: var(--themecolor);
 	position: absolute;
 	right: -8px;
-	top: 1px;
+	top: -26px;
 	font-size: 36px;
 }
 

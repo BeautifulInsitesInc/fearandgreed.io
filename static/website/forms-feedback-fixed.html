@@ -18,8 +18,6 @@
 	<link rel="stylesheet" href="css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-
 	<!-- Document Title
 	============================================= -->
 	<title>Feedback - Forms | Canvas</title>
@@ -35,8 +33,8 @@
 	background-color: #EEE;
 	-webkit-transition: right .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 	-o-transition: right .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-    transition: right .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-    -webkit-backface-visibility: hidden;
+	transition: right .3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	-webkit-backface-visibility: hidden;
 }
 
 .fixed-feedback .fixed-feedback-button {
@@ -1759,13 +1757,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -1810,12 +1804,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>
@@ -1893,62 +1887,59 @@
 				<div class="col-12">
 					<div class="form-group">
 						<label>Ease of Use:</label>
-						<div class="btn-group btn-group-sm btn-group-toggle d-flex" data-toggle="buttons">
-							<label class="btn btn-outline-danger ls0 nott">
-								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-1" value="Terrible"><i class="icon-sad-cry1"></i>
-							</label>
-							<label class="btn btn-outline-danger ls0 nott">
-								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-2" value="Bad"><i class="icon-frown1"></i>
-							</label>
-							<label class="btn btn-outline-warning ls0 nott">
-								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-3" value="Average"><i class="icon-meh1"></i>
-							</label>
-							<label class="btn btn-outline-success ls0 nott">
-								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-4" value="Good"><i class="icon-smile1"></i>
-							</label>
-							<label class="btn btn-outline-success ls0 nott">
-								<input type="radio" name="feedback-rating-ease" id="feedback-rating-ease-5" value="Awesome"><i class="icon-grin-beam1"></i>
-							</label>
+						<div class="btn-group btn-group-sm d-flex" role="group" >
+							<input type="radio" class="btn-check" name="feedback-rating-ease" id="feedback-rating-ease-1" value="Terrible">
+							<label for="feedback-rating-ease-1" class="btn btn-outline-danger ls0 nott"><i class="icon-sad-cry1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-ease" id="feedback-rating-ease-2" value="Bad">
+							<label for="feedback-rating-ease-2" class="btn btn-outline-danger ls0 nott"><i class="icon-frown1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-ease" id="feedback-rating-ease-3" value="Average">
+							<label for="feedback-rating-ease-3" class="btn btn-outline-warning ls0 nott"><i class="icon-meh1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-ease" id="feedback-rating-ease-4" value="Good">
+							<label for="feedback-rating-ease-4" class="btn btn-outline-success ls0 nott"><i class="icon-smile1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-ease" id="feedback-rating-ease-5" value="Awesome">
+							<label for="feedback-rating-ease-5" class="btn btn-outline-success ls0 nott"><i class="icon-grin-beam1"></i></label>
 						</div>
 					</div>
 					<div class="form-group">
 						<label>UX Design:</label>
-						<div class="btn-group btn-group-sm btn-group-toggle d-flex" data-toggle="buttons">
-							<label class="btn btn-outline-danger ls0 nott">
-								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-1" value="Terrible"><i class="icon-sad-cry1"></i>
-							</label>
-							<label class="btn btn-outline-danger ls0 nott">
-								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-2" value="Bad"><i class="icon-frown1"></i>
-							</label>
-							<label class="btn btn-outline-warning ls0 nott">
-								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-3" value="Average"><i class="icon-meh1"></i>
-							</label>
-							<label class="btn btn-outline-success ls0 nott">
-								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-4" value="Good"><i class="icon-smile1"></i>
-							</label>
-							<label class="btn btn-outline-success ls0 nott">
-								<input type="radio" name="feedback-rating-ux-design" id="feedback-rating-ux-design-5" value="Awesome"><i class="icon-grin-beam1"></i>
-							</label>
+						<div class="btn-group btn-group-sm d-flex" role="group">
+							<input type="radio" class="btn-check" name="feedback-rating-ux-design" id="feedback-rating-ux-design-1" value="Terrible">
+							<label for="feedback-rating-ux-design-1" class="btn btn-outline-danger ls0 nott"><i class="icon-sad-cry1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-ux-design" id="feedback-rating-ux-design-2" value="Bad">
+							<label for="feedback-rating-ux-design-2" class="btn btn-outline-danger ls0 nott"><i class="icon-frown1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-ux-design" id="feedback-rating-ux-design-3" value="Average">
+							<label for="feedback-rating-ux-design-3" class="btn btn-outline-warning ls0 nott"><i class="icon-meh1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-ux-design" id="feedback-rating-ux-design-4" value="Good">
+							<label for="feedback-rating-ux-design-4" class="btn btn-outline-success ls0 nott"><i class="icon-smile1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-ux-design" id="feedback-rating-ux-design-5" value="Awesome">
+							<label for="feedback-rating-ux-design-5" class="btn btn-outline-success ls0 nott"><i class="icon-grin-beam1"></i></label>
 						</div>
 					</div>
 					<div class="form-group">
 						<label>Functionality:</label>
-						<div class="btn-group btn-group-sm btn-group-toggle d-flex" data-toggle="buttons">
-							<label class="btn btn-outline-danger ls0 nott">
-								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-1" value="Terrible"><i class="icon-sad-cry1"></i>
-							</label>
-							<label class="btn btn-outline-danger ls0 nott">
-								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-2" value="Bad"><i class="icon-frown1"></i>
-							</label>
-							<label class="btn btn-outline-warning ls0 nott">
-								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-3" value="Average"><i class="icon-meh1"></i>
-							</label>
-							<label class="btn btn-outline-success ls0 nott">
-								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-4" value="Good"><i class="icon-smile1"></i>
-							</label>
-							<label class="btn btn-outline-success ls0 nott">
-								<input type="radio" name="feedback-rating-functionality" id="feedback-rating-functionality-5" value="Awesome"><i class="icon-grin-beam1"></i>
-							</label>
+						<div class="btn-group btn-group-sm d-flex" role="group">
+							<input type="radio" class="btn-check" name="feedback-rating-functionality" id="feedback-rating-functionality-1" value="Terrible">
+							<label for="feedback-rating-functionality-1" class="btn btn-outline-danger ls0 nott"><i class="icon-sad-cry1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-functionality" id="feedback-rating-functionality-2" value="Bad">
+							<label for="feedback-rating-functionality-2" class="btn btn-outline-danger ls0 nott"><i class="icon-frown1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-functionality" id="feedback-rating-functionality-3" value="Average">
+							<label for="feedback-rating-functionality-3" class="btn btn-outline-warning ls0 nott"><i class="icon-meh1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-functionality" id="feedback-rating-functionality-4" value="Good">
+							<label for="feedback-rating-functionality-4" class="btn btn-outline-success ls0 nott"><i class="icon-smile1"></i></label>
+
+							<input type="radio" class="btn-check" name="feedback-rating-functionality" id="feedback-rating-functionality-5" value="Awesome">
+							<label for="feedback-rating-functionality-5" class="btn btn-outline-success ls0 nott"><i class="icon-grin-beam1"></i></label>
 						</div>
 					</div>
 				</div>

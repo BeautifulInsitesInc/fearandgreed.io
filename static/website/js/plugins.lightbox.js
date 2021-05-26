@@ -165,7 +165,9 @@ window.SEMICOLON_modalInit = function( $modalEl ){
 			elTimeout		= element.attr('data-timeout'),
 			elAnimateIn		= element.attr('data-animate-in'),
 			elAnimateOut	= element.attr('data-animate-out'),
-			elCookies		= element.attr('data-cookies');
+			elCookies		= element.attr('data-cookies'),
+			elCookiePath	= element.attr('data-cookie-path'),
+			elCookieExp		= element.attr('data-cookie-expire');
 
 		if( elCookies == "false" ) { Cookies.remove( elTargetValue ); }
 
@@ -203,7 +205,17 @@ window.SEMICOLON_modalInit = function( $modalEl ){
 							$(elTarget).removeClass( elAnimateIn + ' ' + elAnimateOut + ' animated' );
 						}
 						if( elCookies == 'true' ) {
-							Cookies.set( elTargetValue, '0' );
+							let cookieOps = {};
+
+							if( elCookieExp ) {
+								cookieOps.expires = Number( elCookieExp );
+							}
+
+							if( elCookiePath ) {
+								cookieOps.path = elCookiePath;
+							}
+
+							Cookies.set( elTargetValue, '0', cookieOps );
 						}
 					}
 				}

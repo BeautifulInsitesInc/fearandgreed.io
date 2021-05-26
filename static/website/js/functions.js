@@ -111,38 +111,55 @@ var SEMICOLON = SEMICOLON || {};
 			}
 		},
 
-		execPlugin: function( element, settings ) {
+		execPlugin: function( element, settings, available ) {
 			window.scwEvents = window.scwEvents || {};
-			
+
 			let pluginActive = false,
 				pluginLinkingInterval;
 
-			if( settings.trigger && !scwEvents[settings.trigger] ) {
-				pluginLinkingInterval = setInterval( function plugFn(){
-					let pluginFnExec = Function( 'return ' + settings.pluginfn )();
-					if( pluginFnExec ) {
-						$(window).trigger( settings.trigger );
-						scwEvents[settings.trigger] = true;
-						clearInterval( pluginLinkingInterval );
-					}
-					return plugFn;
-				}(), 1000);
-			} else {
-				pluginActive = true;
-			}
+			if( available ) {
 
-			if( settings.execfn ) {
-				if( settings.trigger && !pluginActive ) {
-					$(window).on( settings.trigger, function(){
-						SEMICOLON.initialize.execFunc( settings.execfn, window, element );
-					});
-				} else {
+				if( settings.trigger && !scwEvents[settings.trigger] ) {
+					$window.trigger( settings.trigger );
+					scwEvents[settings.trigger] = true;
+				}
+
+				if( settings.execfn ) {
 					SEMICOLON.initialize.execFunc( settings.execfn, window, element );
 				}
-			}
 
-			if( settings.class ) {
-				$body.addClass( settings.class );
+				if( settings.class ) {
+					$body.addClass( settings.class );
+				}
+
+			} else {
+				if( settings.trigger && !scwEvents[settings.trigger] ) {
+					pluginLinkingInterval = setInterval( function plugFn(){
+						let pluginFnExec = Function( 'return ' + settings.pluginfn )();
+						if( pluginFnExec ) {
+							$window.trigger( settings.trigger );
+							scwEvents[settings.trigger] = true;
+							clearInterval( pluginLinkingInterval );
+						}
+						return plugFn;
+					}(), 1000);
+				} else {
+					pluginActive = true;
+				}
+
+				if( settings.execfn ) {
+					if( settings.trigger && !pluginActive ) {
+						$window.on( settings.trigger, function(){
+							SEMICOLON.initialize.execFunc( settings.execfn, window, element );
+						});
+					} else {
+						SEMICOLON.initialize.execFunc( settings.execfn, window, element );
+					}
+				}
+
+				if( settings.class ) {
+					$body.addClass( settings.class );
+				}
 			}
 		},
 
@@ -174,7 +191,7 @@ var SEMICOLON = SEMICOLON || {};
 			}
 
 			if( pluginFnExec ) {
-				SEMICOLON.initialize.execPlugin( element, settings );
+				SEMICOLON.initialize.execPlugin( element, settings, true );
 			} else {
 				if( !disableAJAX ) {
 					$.ajax({
@@ -184,7 +201,7 @@ var SEMICOLON = SEMICOLON || {};
 						crossDomain: true,
 						timeout: 5000,
 					}).done(function() {
-						SEMICOLON.initialize.execPlugin( element, settings );
+						SEMICOLON.initialize.execPlugin( element, settings, false );
 					}).fail(function() {
 						console.log( settings.error );
 					});
@@ -1718,9 +1735,9 @@ var SEMICOLON = SEMICOLON || {};
 				file: 'plugins.notify.js',
 				error: 'plugins.notify.js: Plugin could not be loaded',
 				execfn: 'SEMICOLON_notificationInit',
-				pluginfn: 'typeof toastr !== "undefined"',
+				pluginfn: 'typeof scwNotificationPlugin !== "undefined"',
 				trigger: 'pluginNotifyReady',
-				class: 'has-plugin-toastr'
+				class: 'has-plugin-toast'
 			};
 
 			SEMICOLON.initialize.functions( settings );
@@ -1911,19 +1928,23 @@ var SEMICOLON = SEMICOLON || {};
 		},
 
 		extras: function(){
-			$(window).on( 'pluginBootstrapReady', function(){
-				if( $().tooltip ) {
-					$('[data-toggle="tooltip"]').tooltip({container: 'body'});
-				} else {
-					console.log('extras: Bootstrap Tooltip not defined.');
-				}
+			let btsCheckIntevral = setInterval( function(){
+				if( 'pluginBootstrapReady' in scwEvents ) {
+					if( $().tooltip ) {
+						$('[data-bs-toggle="tooltip"]').tooltip({container: 'body'});
+					} else {
+						console.log('extras: Bootstrap Tooltip not defined.');
+					}
 
-				if( $().popover ) {
-					$('[data-toggle=popover]').popover();
-				} else {
-					console.log('extras: Bootstrap Popover not defined.');
+					if( $().popover ) {
+						$('[data-bs-toggle="popover"]').popover({container: 'body'});
+					} else {
+						console.log('extras: Bootstrap Popover not defined.');
+					}
+
+					clearInterval( btsCheckIntevral );
 				}
-			});
+			}, 1000 );
 
 			$('.style-msg').on( 'click', '.close', function(e){
 				$( this ).parents( '.style-msg' ).slideUp();
@@ -2152,10 +2173,13 @@ var SEMICOLON = SEMICOLON || {};
 			SEMICOLON.slider.revolutionSliderMenu(true);
 			SEMICOLON.initialize.stickFooterOnSmall();
 			SEMICOLON.widget.gridInit();
-			$window.on( 'pluginIsotopeReady', function(){
-				SEMICOLON.widget.filterInit();
-				SEMICOLON.widget.masonryThumbs();
-			});
+			let isoCheckInt = setInterval( function(){
+				if( 'pluginIsotopeReady' in scwEvents ) {
+					SEMICOLON.widget.filterInit();
+					SEMICOLON.widget.masonryThumbs();
+					clearInterval( isoCheckInt );
+				}
+			}, 1000 );
 			SEMICOLON.widget.parallax();
 			SEMICOLON.widget.loadFlexSlider();
 			SEMICOLON.widget.html5Video();

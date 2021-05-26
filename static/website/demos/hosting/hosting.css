@@ -40,15 +40,12 @@
 .mega-menu-column .btn-link { font-size: 14px; }
 
 .section-domain .dropdown-toggle::after { vertical-align: middle }
-.section-domain .custom-select:focus,
+.section-domain .form-select:focus,
 .section-domain .form-control:focus {
 	border-color: #ced4da;
 	box-shadow: none
 }
-.section-domain .custom-select {
-	height: 50px;
-	border-radius: 0;
-	padding-left: 1.1rem;
+.section-domain .form-select {
 	background-color: #F9F9F9;
 }
 
@@ -69,7 +66,7 @@
 .ram-price,
 .storage-price { font-size: 44px; }
 
-.font-normal { font-style: normal !important; }
+.fst-normal { font-style: normal !important; }
 
 #top-bar {
 	height: 52px;

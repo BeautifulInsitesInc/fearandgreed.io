@@ -35,7 +35,7 @@ window.SEMICOLON_pageTransitionInit = function( $wrapperEl ){
 		elTimeout				= $body.attr('data-loader-timeout'),
 		elLoader				= $body.attr('data-loader'),
 		elLoaderColor			= $body.attr('data-loader-color'),
-		elLoaderHtml			= $body.attr('data-loader-html') || '<div class="css3-spinner-bounce1"></div><div class="css3-spinner-bounce2"></div><div class="css3-spinner-bounce3"></div>',
+		elLoaderHtml			= $body.attr('data-loader-html'),
 		elLoaderAppend			= '',
 		elLoaderBefore			= '<div class="css3-spinner">',
 		elLoaderAfter			= '</div>',

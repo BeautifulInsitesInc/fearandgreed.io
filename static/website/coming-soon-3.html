@@ -46,7 +46,7 @@
 
 						<div class="header-misc">
 
-							<a href="#" data-toggle="modal" data-target="#contactFormModal" class="social-icon si-light si-email3">
+							<a href="#" data-bs-toggle="modal" data-bs-target="#contactFormModal" class="social-icon si-light si-email3">
 								<i class="icon-email3"></i>
 								<i class="icon-email3"></i>
 							</a>
@@ -76,13 +76,9 @@
 							<div class="widget-subscribe-form-result"></div>
 							<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 								<div class="input-group input-group-lg mx-auto" style="max-width:600px;">
-									<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+									<div class="input-group-text"><i class="icon-email2"></i></div>
 									<input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-									<div class="input-group-append">
-										<button class="btn btn-info" type="submit">Subscribe Now</button>
-									</div>
+									<button class="btn btn-danger" type="submit">Subscribe Now</button>
 								</div>
 							</form>
 						</div>
@@ -108,7 +104,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h4 class="modal-title" id="contactFormModalLabel">Send Us an Email</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
 					</div>
 					<div class="modal-body">
 						<div class="form-widget">
@@ -170,7 +166,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->

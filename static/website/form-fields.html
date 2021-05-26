@@ -1646,7 +1646,7 @@
 
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-default-select">Single Select Box:</label>
-													<select id="template-contactform-default-select" name="template-contactform-default-select" class="form-control">
+													<select id="template-contactform-default-select" name="template-contactform-default-select" class="form-select">
 														<option value="" disabled selected>Select One</option>
 														<option value="Wordpress">Wordpress</option>
 														<option value="PHP / MySQL">PHP / MySQL</option>
@@ -1657,7 +1657,7 @@
 
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-multiple-select">Multiple Selected Box:</label>
-													<select id="template-contactform-multiple-select" name="template-contactform-multiple-select[]" class="selectpicker form-control" multiple>
+													<select id="template-contactform-multiple-select" name="template-contactform-multiple-select[]" class="selectpicker w-100" multiple>
 														<option value="Mustard">Mustard</option>
 														<option value="Ketchup">Ketchup</option>
 														<option value="Relish">Relish</option>
@@ -1666,7 +1666,7 @@
 
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-tags-select">Tags Select Box:</label>
-													<select class="select-tags input-select2 form-control" multiple="" tabindex="-1" aria-hidden="true" id="template-contactform-tags-select" name="template-contactform-tags-select[]" style="width: 100%;">
+													<select class="select-tags input-select2 form-select" multiple="" tabindex="-1" aria-hidden="true" id="template-contactform-tags-select" name="template-contactform-tags-select[]" style="width: 100%;">
 														<option value="Orange" selected="selected">Orange</option>
 														<option value="White">White</option>
 														<option value="Purple" selected="selected">Purple</option>
@@ -1679,23 +1679,17 @@
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-budget">Input Group with Addons:</label>
 													<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text">$</span>
-													</div>
+												<span class="input-group-text">$</span>
 													<input id="template-contactform-budget" name="template-contactform-budget" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Enter your Budget">
-														<div class="input-group-append">
-															<span class="input-group-text">.00</span>
-														</div>
+													<span class="input-group-text">.00</span>
 													</div>
 												</div>
 
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-date">Date Time Picker:</label>
 													<div class="form-group mb-0">
-														<div class="input-group text-left">
-															<div class="input-group-prepend" data-target=".datetimepicker1" data-toggle="datetimepicker">
-																<div class="input-group-text"><i class="icon-calendar3"></i></div>
-															</div>
+														<div class="input-group text-start">
+															<div class="input-group-text" data-target=".datetimepicker1" data-toggle="datetimepicker"><i class="icon-calendar3"></i></div>
 															<input id="template-contactform-date" name="template-contactform-date" type="text" class="form-control datetimepicker-input datetimepicker1" data-target=".datetimepicker1" data-toggle="datetimepicker" placeholder="Select your Flexible Date & Time" />
 														</div>
 													</div>
@@ -1718,15 +1712,17 @@
 
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-platform" class="mb-3">Choose any Platform:</label><br>
-													<div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-														<label for="template-contactform-platform-mobile" class="btn btn-outline-secondary flex-fill font-weight-semibold ls0 nott active">
-															<input type="radio" name="template-contactform-platform" id="template-contactform-platform-mobile" autocomplete="off" checked value="Mobile"> Mobile
+													<div class="btn-group w-100" role="group">
+														<input type="radio" class="btn-check" name="template-contactform-platform" id="template-contactform-platform-mobile" autocomplete="off" checked value="Mobile">
+														<label for="template-contactform-platform-mobile" class="btn btn-outline-secondary flex-fill fw-semibold ls0 nott">Mobile
 														</label>
-														<label for="template-contactform-platform-web" class="btn btn-outline-secondary flex-fill font-weight-semibold ls0 nott">
-															<input type="radio" name="template-contactform-platform" id="template-contactform-platform-web" autocomplete="off" value="Web"> Web
+
+														<input type="radio" class="btn-check" name="template-contactform-platform" id="template-contactform-platform-web" autocomplete="off" value="Web">
+														<label for="template-contactform-platform-web" class="btn btn-outline-secondary flex-fill fw-semibold ls0 nott">Web
 														</label>
-														<label for="template-contactform-platform-others" class="btn btn-outline-secondary flex-fill font-weight-semibold ls0 nott">
-															<input type="radio" name="template-contactform-platform" id="template-contactform-platform-others" autocomplete="off" value="Others"> Others
+
+														<input type="radio" class="btn-check" name="template-contactform-platform" id="template-contactform-platform-others" autocomplete="off" value="Others">
+														<label for="template-contactform-platform-others" class="btn btn-outline-secondary flex-fill fw-semibold ls0 nott"> Others
 														</label>
 													</div>
 												</div>
@@ -1735,10 +1731,10 @@
 													<label for="template-contactform-offers" class="mb-3">Get Offers &amp; Newsletters:</label><br>
 													<ul class="nav btn-group">
 														<li class="btn-group">
-															<a class="btn btn-outline-secondary px-4 active" data-toggle="pill" href="#offers-tab-1" role="tab">No</a>
+															<a class="btn btn-outline-secondary px-4 active" data-bs-toggle="pill" href="#offers-tab-1" role="tab">No</a>
 														</li>
 														<li class="btn-group">
-															<a class="btn btn-outline-secondary px-4" data-toggle="pill" href="#offers-tab-2" role="tab">Yes</a>
+															<a class="btn btn-outline-secondary px-4" data-bs-toggle="pill" href="#offers-tab-2" role="tab">Yes</a>
 														</li>
 													</ul>
 													<div class="tab-content">
@@ -1752,18 +1748,18 @@
 
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-know-us" class="mb-3">How do You Know about us:</label><br>
-													<div class="btn-group btn-group-toggle nav" data-toggle="buttons">
-														<a href="#know-us-tab-1" class="btn btn-outline-secondary flex-fill active" data-toggle="tab">
-															<input type="radio" name="template-contactform-know-us" id="template-contactform-know-us-google" value="Google">Google
+													<div class="btn-group nav"  role="group">
+														<a href="#know-us-tab-1" class="btn btn-outline-secondary flex-fill active" data-bs-toggle="tab">
+															<input type="radio" class="btn-check" name="template-contactform-know-us" id="template-contactform-know-us-google" value="Google">Google
 														</a>
-														<a href="#know-us-tab-2" class="btn btn-outline-secondary flex-fill" data-toggle="tab">
-															<input type="radio" name="template-contactform-know-us" id="template-contactform-know-us-social" value="Social">Social Sites
+														<a href="#know-us-tab-2" class="btn btn-outline-secondary flex-fill" data-bs-toggle="tab">
+															<input type="radio" class="btn-check" name="template-contactform-know-us" id="template-contactform-know-us-social" value="Social">Social Sites
 														</a>
-														<a href="#know-us-tab-3" class="btn btn-outline-secondary flex-fill" data-toggle="tab">
-															<input type="radio" name="template-contactform-know-us" id="template-contactform-know-us-friends" value="Friends">Friends
+														<a href="#know-us-tab-3" class="btn btn-outline-secondary flex-fill" data-bs-toggle="tab">
+															<input type="radio" class="btn-check" name="template-contactform-know-us" id="template-contactform-know-us-friends" value="Friends">Friends
 														</a>
-														<a href="#know-us-tab-4" class="btn btn-outline-secondary flex-fill" data-toggle="tab">
-															<input type="radio" name="template-contactform-know-us" id="template-contactform-know-us-others" value="others">Others
+														<a href="#know-us-tab-4" class="btn btn-outline-secondary flex-fill" data-bs-toggle="tab">
+															<input type="radio" class="btn-check" name="template-contactform-know-us" id="template-contactform-know-us-others" value="others">Others
 														</a>
 													</div>
 
@@ -1785,9 +1781,9 @@
 															<input id="template-contactform-default-switch" name="template-contactform-default-switch" class="switch-toggle switch-toggle-round" type="checkbox">
 															<label for="template-contactform-default-switch"></label>
 														</div>
-														<label class="media-body text-muted ml-3" for="template-contactform-default-switch">
+														<label class="media-body text-muted ms-3" for="template-contactform-default-switch">
 													    	<span class="d-block text-dark mb-1 nott ls0">Default Switch</span>
-													    	<span class="d-block nott ls0 font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+													    	<span class="d-block nott ls0 fw-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
 													    </label>
 												    </div>
 												    <div class="line my-3"></div>
@@ -1796,9 +1792,9 @@
 															<input id="template-contactform-checked-switch" name="template-contactform-checked-switch" class="switch-toggle switch-toggle-round" checked type="checkbox">
 															<label for="template-contactform-checked-switch"></label>
 														</div>
-														<label class="media-body text-muted ml-3" for="template-contactform-checked-switch">
+														<label class="media-body text-muted ms-3" for="template-contactform-checked-switch">
 													        <span class="d-block text-dark mb-1 nott ls0">Checked Switch</span>
-													        <span class="d-block nott ls0 font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, aut?</span>
+													        <span class="d-block nott ls0 fw-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, aut?</span>
 													    </label>
 												    </div>
 												</div>
@@ -1806,16 +1802,14 @@
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-url">URL with input Group(Autocomplete):</label>
 													<div class="input-group mb-3">
-													  <div class="input-group-prepend">
-													    <span class="input-group-text">themeforest.net/user/</span>
-													  </div>
+													  <span class="input-group-text">themeforest.net/user/</span>
 													  <input type="text" class="form-control" id="template-contactform-url" name="template-contactform-url" value="semicolonweb" aria-describedby="url address..">
 													</div>
 												</div>
 
 												<div class="col-12 bottommargin-sm">
 													<label>Live Search (Max 3):</label><br>
-													<select class="selectpicker form-control" multiple data-live-search="true" data-size="12" data-max-options="3" title="Choose max 3 of the following..." name="template-contactform-livesearch[]">
+													<select class="selectpicker w-100" multiple data-live-search="true" data-size="12" data-max-options="3" title="Choose max 3 of the following..." name="template-contactform-livesearch[]">
 														<option value="China">China</option>
 														<option value="India">India</option>
 														<option value="Brazil">Brazil</option>
@@ -1845,7 +1839,7 @@
 
 												<div class="col-12 bottommargin-sm">
 													<label for="template-contactform-select-splitter">Select Splitter:</label>
-													<select id="template-contactform-select-splitter" size="1" class="form-control selectsplitter" name="template-contactform-select-splitter">
+													<select id="template-contactform-select-splitter" size="1" class="form-select selectsplitter" name="template-contactform-select-splitter">
 														<optgroup label="Category 1">
 															<option value="1-1">Choice 1-1</option>
 															<option value="1-2">Choice 1-2</option>
@@ -1880,7 +1874,7 @@
 													<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" />
 												</div>
 												<div class="col-12">
-													<button type="submit" name="template-contactform-submit" class="btn btn-secondary btn-block btn-lg">Send</button>
+													<button type="submit" name="template-contactform-submit" class="btn btn-secondary w-100 btn-lg">Send</button>
 												</div>
 
 												<input type="hidden" name="prefix" value="template-contactform-">
@@ -2039,13 +2033,9 @@
 										<div class="widget-subscribe-form-result"></div>
 										<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
 											<div class="input-group mx-auto">
-												<div class="input-group-prepend">
-													<div class="input-group-text"><i class="icon-email2"></i></div>
-												</div>
+												<div class="input-group-text"><i class="icon-email2"></i></div>
 												<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-												<div class="input-group-append">
-													<button class="btn btn-success" type="submit">Subscribe</button>
-												</div>
+												<button class="btn btn-success" type="submit">Subscribe</button>
 											</div>
 										</form>
 									</div>
@@ -2090,12 +2080,12 @@
 
 					<div class="row col-mb-30">
 
-						<div class="col-md-6 text-center text-md-left">
+						<div class="col-md-6 text-center text-md-start">
 							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 						</div>
 
-						<div class="col-md-6 text-center text-md-right">
+						<div class="col-md-6 text-center text-md-end">
 							<div class="d-flex justify-content-center justify-content-md-end">
 								<a href="#" class="social-icon si-small si-borderless si-facebook">
 									<i class="icon-facebook"></i>

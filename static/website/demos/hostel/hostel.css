@@ -215,7 +215,7 @@ body:not(.form-availability-processing) .form-availability-loader { display: non
 
 .owl-carousel-full.full-nav .owl-dots .owl-dot { background: #FFF; }
 
-[data-toggle="collapse"][aria-expanded="true"] { display: none; }
+[data-bs-toggle="collapse"][aria-expanded="true"] { display: none; }
 
 
 /* Responsive Device more than 992px (.device-md >)

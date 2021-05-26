@@ -163,11 +163,11 @@
 		<section id="content">
 			<div class="content-wrap py-0">
 
-				<div class="row align-items-stretch justify-content-between no-gutters">
+				<div class="row align-items-stretch justify-content-between g-0">
 
 					<div class="col-lg-4 col-md-5 overflow-hidden min-vh-50" style="background-color: var(--themecolor);">
 						<div class="dark h-100 min-vh-md-100 d-flex flex-column justify-content-center z-1 position-relative p-5">
-							<h1 class="font-weight-bold">Personal Details</h1>
+							<h1 class="fw-bold">Personal Details</h1>
 							<p class=" text-white-50 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing, elit.</p>
 
 							<div>
@@ -205,9 +205,9 @@
 									<div class="form-process"></div>
 
 									<div id="tab-reservation" class="nav nav-pills flex-column flex-lg-row" role="tablist">
-										<a class="nav-link active ml-0" data-toggle="list" href="#tab-reservation-details" role="tab">1. Your Details</a>
-										<a class="nav-link ml-0 mt-2 mt-lg-0 ml-lg-3" data-toggle="list" href="#tab-reservation-select-address" role="tab">2. Your Address</a>
-										<a class="nav-link ml-0 mt-2 mt-lg-0 ml-lg-3" data-toggle="list" href="#tab-reservation-msg" role="tab">3. Your Message</a>
+										<a class="nav-link active ms-0" data-bs-toggle="list" href="#tab-reservation-details" role="tab">1. Your Details</a>
+										<a class="nav-link ms-0 mt-2 mt-lg-0 ms-lg-3" data-bs-toggle="list" href="#tab-reservation-select-address" role="tab">2. Your Address</a>
+										<a class="nav-link ms-0 mt-2 mt-lg-0 ms-lg-3" data-bs-toggle="list" href="#tab-reservation-msg" role="tab">3. Your Message</a>
 									</div>
 
 									<div class="line line-sm"></div>
@@ -216,7 +216,7 @@
 
 										<div class="tab-pane fade show active" id="tab-reservation-details" role="tabpanel" aria-labelledby="tab-reservation-details">
 											<span class="op-05 text-smaller ls1">STEP - 1/3</span>
-											<h2 class="mb-5 text-uppercase ls1 font-weight-bold">Your Details</h2>
+											<h2 class="mb-5 text-uppercase ls1 fw-bold">Your Details</h2>
 											<div class="row">
 												<div class="col-6 mb-4">
 													<label for="step-form-first-name">First Name:</label>
@@ -236,7 +236,7 @@
 												</div>
 												<div class="col-6 col-6 mb-4">
 													<label for="step-form-age">Date of Birth:</label>
-													<input type="text" value="" class="form-control required text-left" id="step-form-age" name="step-form-age" placeholder="DD/MM/YYYY">
+													<input type="text" value="" class="form-control required text-start" id="step-form-age" name="step-form-age" placeholder="DD/MM/YYYY">
 												</div>
 												<div class="col-6 col-6 mb-5">
 													<label for="step-form-url">Website Link (Optional):</label>
@@ -246,14 +246,14 @@
 												<div class="w-100 clear"></div>
 
 												<div class="col-12">
-													<a href="#" class="btn px-5 py-3 tab-action-btn-next float-right text-white" style="background-color: #3D1144;">Next Step</a>
+													<a href="#" class="btn px-5 py-3 tab-action-btn-next float-end text-white" style="background-color: #3D1144;">Next Step</a>
 												</div>
 											</div>
 										</div>
 
 										<div class="tab-pane fade" id="tab-reservation-select-address" role="tabpanel" aria-labelledby="tab-reservation-select-address">
 											<span class="op-05 text-smaller ls1">STEP - 2/3</span>
-											<h2 class="mb-5 text-uppercase ls1 font-weight-bold">Your Address</h2>
+											<h2 class="mb-5 text-uppercase ls1 fw-bold">Your Address</h2>
 											<div class="row">
 												<div class="col-12 mb-4">
 													<label for="step-form-address-1" class="mb-2">Full  Address:</label>
@@ -272,14 +272,14 @@
 													<input type="text" name="step-form-postalcode" id="step-form-postalcode" class="form-control border-form-control required" value="" placeholder="Postal Code">
 												</div>
 												<div class="col-12">
-													<a href="#" class="btn px-5 py-3 tab-action-btn-next float-right text-white" style="background-color: #3D1144;">Next Step</a>
+													<a href="#" class="btn px-5 py-3 tab-action-btn-next float-end text-white" style="background-color: #3D1144;">Next Step</a>
 												</div>
 											</div>
 										</div>
 
 										<div class="tab-pane fade" id="tab-reservation-msg" role="tabpanel" aria-labelledby="tab-reservation-msg">
 											<span class="op-05 text-smaller ls1">STEP - 3/3</span>
-											<h2 class="mb-5 text-uppercase ls1 font-weight-bold">Your Message</h2>
+											<h2 class="mb-5 text-uppercase ls1 fw-bold">Your Message</h2>
 											<div class="row">
 												<div class="col-12 mb-5">
 													<label for="step-form-message">Your Message:</label>
@@ -289,7 +289,7 @@
 													<input type="text" id="step-form-botcheck" name="step-form-botcheck" value="" />
 												</div>
 												<div class="col-12">
-													<button type="submit" name="step-form-submit" class="btn px-5 py-3 float-right text-white" style="background-color: #3D1144;">Submit Now</button>
+													<button type="submit" name="step-form-submit" class="btn px-5 py-3 float-end text-white" style="background-color: #3D1144;">Submit Now</button>
 												</div>
 
 												<input type="hidden" name="prefix" value="step-form-">
@@ -337,6 +337,11 @@
 					return false;
 				} else {
 					$('#tab-reservation > .active').next('a').removeClass('disabled').trigger('click');
+					let nextTabEl = $('#tab-reservation > .active').next('a').removeClass('disabled'),
+						tab = new bootstrap.Tab( nextTabEl.get(0) );
+
+					tab.show();
+
 					e.preventDefault();
 					return false;
 				}
