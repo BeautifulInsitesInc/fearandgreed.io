@@ -6,8 +6,7 @@
         <h1>{{heading}}</h1>
         <span>{{subheading}}</span>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Contact</li>
+          {model.verbose_name}_list
         </ol>
       </div>
 

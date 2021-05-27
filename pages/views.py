@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from view_breadcrumbs import DetailBreadcrumbMixin
 
 def temp(request):
 	return render(request, "temp.html",{})

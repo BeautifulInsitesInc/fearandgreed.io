@@ -1,4 +1,10 @@
 {% load static %}
+{% load view_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {% render_breadcrumbs %} 
+{% endblock %}
+
 <!doctype html>
 <html dir="ltr" lang="en-US">
 
@@ -46,7 +52,7 @@
             <div class="top-links on-click">
               <ul class="top-links-container">
                 <li class="top-links-item"><a href="{% url 'home' %}">Home</a></li>
-                <li class="top-links-item"><a href="#">FAQs</a></li>
+                <li class="top-links-item"><a href="{% url 'add_post' %}">Add Post</a></li>
                 <li class="top-links-item"><a href="{% url 'contact' %}">Contact</a></li>
                 <li class="top-links-item"><a href="#">Login</a>
                   <div class="top-links-section">
@@ -132,8 +138,22 @@
                 <li class="menu-item">
                   <a class="menu-link" href="#"><div>Resources</div><span>Useful Tools</span></a>
                 </li>
-                <li class="menu-item mega-menu">
-                  <a class="menu-link" href="#"><div>Blog</div><span>Share Ideas</span></a>
+
+
+                <li class="menu-item">
+                  <a class="menu-link" href="{% url 'blog' %}"><div>Blog</div><span>Share Ideas</span></a>
+
+                    <ul class='sub-menu-container'>
+                      <li class="menu-item">
+                        <a class="menu-link" href="{% url 'blog' %}"><div>Main Blog</div></a>
+                      </li>
+                      <li class="menu-item">
+                        <a class="menu-link" href="{% url 'article-list'%}"><div>Blog List</div></a>
+                      </li>
+
+                    </ul>
+                
+
                 </li>
                 <li class="menu-item mega-menu">
                   <a class="menu-link" href="#"><div>Markets</div><span>Useful Analytics</span></a>
