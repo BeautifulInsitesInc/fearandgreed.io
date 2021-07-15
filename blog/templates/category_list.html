@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Category List {% endblock %}
+
+{% block content %}
+
+{% include 'header.html' with heading="CATEGORY LIST" subheading="It's a Traders Life" %}
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <ul>
+            {% for post in object_list %}
+                <li><a href="{% url 'category' post.pk %}">{{ post.category }}</a> 
+                <!--{{ post.body }} -->
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

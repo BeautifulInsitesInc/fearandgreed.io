@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Edit Post {% endblock %}
+
+{% block content %}
+
+{% include 'header.html' with heading="EDIT POST" subheading="It's a Traders Life" %}
+
+{% if user.is_authenticated %}
+	<div class="container">
+		<div class="row">
+			<!-- Contact Form Overlay
+			============================================= -->
+			<div class="contact-form-overlay col-md-8 offset-md-2 p-5">
+
+				
+				<div class="fancy-title title-border">
+					<h3>Create Somthing New!</h3><br/>
+				</div>
+					
+				<form method ="POST">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<button class="button button-3d m-0" type="submit" id="message-submit" name="message-submit" value="submit">Save Edits</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{% else %}
+You are not allowed here, and you know it!
+{% endif %}
+
+
+{% endblock %}
