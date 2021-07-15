@@ -5,14 +5,27 @@
 
 {% block content %}
 
-<h1>Blog</h1>
-<ul>
-{% for post in object_list %}
-	<li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }} {{ post.author.last_name }}<br/>
-	{{ post.body }}</li>
-{% endfor %}
-</ul>
+{% include 'header.html' with heading="POST LISTING" subheading="It's a Traders Life" %}
 
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<ul>
+			{% for post in object_list %}
+				<li><a href="{% url 'article_detail' post.pk %}">{{ post.title }}</a> - C:{{ post.created_at }} - M:{{ post.pupdated_ats }} - <a href="{% url 'category' post.category|slugify %}">{{ post.category }} </a> - {{ post.author.first_name }} {{ post.author.last_name }}
+					{% if user.is_authenticated %}
+						- <small><a href="{% url 'edit_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a></small>
+					{% endif %}
+				<!--{{ post.body }} -->
+				</br>
+				{{ post.snippet| safe |slice:":200" }}
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
 
+cat_menu: {{cat_menu}}
 
 {% endblock %}

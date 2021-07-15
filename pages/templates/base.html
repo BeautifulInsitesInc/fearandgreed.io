@@ -1,9 +1,11 @@
 {% load static %}
+<!-- 
 {% load view_breadcrumbs %}
 
 {% block breadcrumbs %}
     {% render_breadcrumbs %} 
 {% endblock %}
+-->
 
 <!doctype html>
 <html dir="ltr" lang="en-US">
@@ -51,9 +53,15 @@
             ============================================= -->
             <div class="top-links on-click">
               <ul class="top-links-container">
-                <li class="top-links-item"><a href="{% url 'home' %}">Home</a></li>
+                
+                <li class="top-links-item"><a href="{% url 'home' %}">Home</a>
+                </li>
+                {% if user.is_authenticated %}
                 <li class="top-links-item"><a href="{% url 'add_post' %}">Add Post</a></li>
-                <li class="top-links-item"><a href="{% url 'contact' %}">Contact</a></li>
+                <li class="top-links-item"><a href="{% url 'article_list' %}">List Posts</a></li>
+                <li class="top-links-item"><a href="{% url 'add_category' %}">Add Category</a></li>
+                <!-- <li class="top-links-item"><a href=#>List Categories</a></li> -->
+                <!--
                 <li class="top-links-item"><a href="#">Login</a>
                   <div class="top-links-section">
                     <form id="top-login" autocomplete="off">
@@ -73,6 +81,15 @@
                     </form>
                   </div>
                 </li>
+              -->
+                <li class="top-links-item"><a href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %} 
+                <li class="top-links-item"><a href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="top-links-item"><a href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
               </ul>
             </div><!-- .top-links end -->
           </div>
@@ -141,20 +158,34 @@
 
 
                 <li class="menu-item">
-                  <a class="menu-link" href="{% url 'blog' %}"><div>Blog</div><span>Share Ideas</span></a>
-
+                  <a class="menu-link" href="{% url 'blog' %}"><div>Topics</div><span>Categories</span></a>
                     <ul class='sub-menu-container'>
                       <li class="menu-item">
                         <a class="menu-link" href="{% url 'blog' %}"><div>Main Blog</div></a>
                       </li>
                       <li class="menu-item">
-                        <a class="menu-link" href="{% url 'article-list'%}"><div>Blog List</div></a>
+                        <a class="menu-link" href="{% url 'article_list'%}"><div>Blog List</div></a>
                       </li>
-
                     </ul>
-                
-
                 </li>
+
+
+                <li class="menu-item">
+                  <a class="menu-link" href="{% url 'blog' %}"><div>Blog</div><span>Share Ideas</span></a>
+                    <ul class='sub-menu-container'>
+                      <li class="menu-item">
+                        <a class="menu-link" href="{% url 'blog' %}"><div>Main Blog</div></a>
+                      </li>
+                      <li class="menu-item">
+                        <a class="menu-link" href="{% url 'article_list'%}"><div>Blog List</div></a>
+                      </li>
+                    </ul>
+                </li>
+
+
+
+
+
                 <li class="menu-item mega-menu">
                   <a class="menu-link" href="#"><div>Markets</div><span>Useful Analytics</span></a>
                 </li>

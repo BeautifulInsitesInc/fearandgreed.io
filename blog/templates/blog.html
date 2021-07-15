@@ -7,6 +7,7 @@
 
 {% include 'header.html' with heading="BLOG" subheading="It's a Traders Life" %}
 
+
 <!-- Content
 		============================================= -->
 		<section id="content">
@@ -27,21 +28,24 @@
 									<div class="entry col-md-4 col-sm-6 col-12">
 										<div class="grid-inner">
 											<div class="entry-image">
-												<a href="{% static 'images/3pillars.png' %}" data-lightbox="image"><img src="{% static 'images/3pillars.png' %}" alt="Standard Post with Image"></a>
+												<a href="{% static 'images/fgblue.png' %}" data-lightbox="image"><img src="{% static 'images/fgblue.png' %}" alt="Standard Post with Image"></a>
 											</div>
 											<div class="entry-title">
-												<h2><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h2>
+												<h2><a href="{% url 'article_detail' post.pk %}">{{ post.title }}</a></h2>
 											</div>
 											<div class="entry-meta">
 												<ul>
-													<li><i class="icon-calendar3"></i> 10th Feb 2021</li>
-													<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
-													<li><a href="#"><i class="icon-camera-retro"></i></a></li>
+													<li><i class="icon-calendar3"></i> {{ post.created_at }}</li>
+													{# <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li> #}
+													<li><i class="icon-folder-open"></i> <a href="{% url 'category' post.category %}">{{ post.category }}</a></li>
+													{% if user.is_authenticated %}
+														<li><small><a href="{% url 'edit_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a></small></li>
+													{% endif %}
 												</ul>
 											</div>
 											<div class="entry-content">
-												<p>{{ post.body }}</p>
-												<a href="{% url 'article-detail' post.pk %}" class="more-link">Read More</a>
+												<p>{{ post.snippet | safe}}</p>
+												<a href="{% url 'article_detail' post.pk %}" class="more-link">Read More</a>
 											</div>
 										</div>
 									</div>

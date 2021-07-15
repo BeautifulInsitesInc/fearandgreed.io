@@ -34,5 +34,5 @@ def contact(request):
 		# return the page
 		return render(request, "contact.html",{'test':"testgood"})
 
-def blog(request):
-	return render(request, "blog.html",{})
+#def blog(request):
+#	return render(request, "blog.html",{})
