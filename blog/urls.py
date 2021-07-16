@@ -13,6 +13,6 @@ urlpatterns = [
    path('delete_post/<int:pk>', DeletePostView.as_view(), name = 'delete_post'),
    path('add_category/', AddCategoryView.as_view(), name = 'add_category'),
    #path('category_list/', CategoryListView.as_view(), name = 'category_list'),
-   path('category/<str:cats>/', CategoryView, name = 'category'),
+   path('category/<str:category_name>/', CategoryView, name = 'category'),
 
 ]

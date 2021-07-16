@@ -5,36 +5,47 @@
 
 {% block content %}
 
-{% include 'header.html' with heading="{{ category_posts }}" subheading="test" %}
+<!-- BLOG HEADER
+    ============================================= -->
+    <section id="page-title">
+
+      <div class="container clearfix">
+        <h1>Topic : <strong>{{ category_name }}</strong></h1>
+        <span>Trade to trade well</span>
+      </div>
+
+    </section><!-- #page-title end -->
 
 
-<h1> cats: {{ cats }} </h1>
-<h1> category_post: {{ category_posts }} </h1>
+<!--<h1> category_number: {{ category_name }} </h1> 
+<h1> category_post: {{ category_posts }} </h1>-->
 
-{% if category_posts %}
+
 
 	<section id="content">
 		<div class="content-wrap">
 			<div class="container clearfix">
-				<ul>
-					TEST
-				{% for post in category_posts %}
-					<li><a href="{% url 'article_detail' post.pk %}">{{ post.title }}</a> - C/{{ post.created_at }} - M/{{ post.pupdated_ats }} - {{ post.author.first_name }} {{ post.author.last_name }}
-						{% if user.is_authenticated %}
-							- <small><a href="{% url 'edit_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a></small>
-						{% endif %}
-					<!--{{ post.body }} -->
-					</br>
-					{{ post.body| safe |slice:":200" }}
-					</li>
-				{% endfor %}
-				</ul>
+				{% if category_posts %}
+					<ul>
+						TEST
+					{% for post in category_posts %}
+						<li><a href="{% url 'article_detail' post.pk %}">{{ post.title }}</a> - C/{{ post.created_at }} - M/{{ post.pupdated_ats }} - {{ post.author.first_name }} {{ post.author.last_name }}
+							{% if user.is_authenticated %}
+								- <small><a href="{% url 'edit_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a></small>
+							{% endif %}
+						<!--{{ post.body }} -->
+						</br>
+						{{ post.body| safe |slice:":200" }}
+						</li>
+					{% endfor %}
+					</ul>
+				{% else %}
+					<h2> Sorry, this page does not exist </h2>
+				{% endif %}	
 			</div>
 		</div>
 	</div>
 
-{% else %}
-	<h2> This page does not exist </h2>
-{% endif %}
+
 
 {% endblock %}

@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages',
     'blog',
-    'view_breadcrumbs',
+    #'view_breadcrumbs',
     'members'
     
 ]

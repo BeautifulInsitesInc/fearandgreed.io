@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Category, Post
+from .models import Post, Category
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
 
@@ -14,10 +14,11 @@ class BlogHome(ListView):
 	template_name = 'blog.html'
 	ordering = ['-created_at']
 
+	# Function for passing category list to menu
 	def get_context_date(self, *args, **kwargs):
-		cat_menu = Category.objects.all
-		context = super(BlogHome, self).get_context_date(*args, **kwargs)
-		context["cat_menu"] = cat_menu
+		category_menu = Category.objects.all #contains the category list library, now push it to the page as a context dictionary that we can access
+		context = super(BlogHome, self).get_context_data(*args, **kwargs)
+		context["category_menu"] = category_menu
 		return context
 
 class ArticleListView(ListView):
@@ -25,9 +26,9 @@ class ArticleListView(ListView):
 	template_name = 'blog_list.html'
 	ordering = ['-created_at']
 
-def CategoryView(request, cats):
-	category_posts = Post.objects.filter(category=cats.replace('-', ' '))
-	return render(request, 'categories.html', {'cats': cats.title().replace('-', ' '), 'category_posts':category_posts})
+def CategoryView(request, category_name):
+	category_posts = Post.objects.filter(category__name__iexact=category_name.replace('-',' '))
+	return render(request, 'categories.html', {'category_name': category_name.title().replace('-',' '), 'category_posts':category_posts})
 	
 class ArticleDetailView(DetailView):
 	model = Post
