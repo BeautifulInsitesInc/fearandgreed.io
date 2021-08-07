@@ -7,25 +7,25 @@
 <head>
   <!-- menu-subtitle-->
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="author" content="SemiColonWeb" />
+  <meta name="author" content="FearandGreed.io" />
 
   <!-- Stylesheets
   ============================================= -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="{% static 'website/css/bootstrap.css' %}" type="text/css" />
-  <link rel="stylesheet" href="{% static 'website/style.css' %}" type="text/css" />
-  <link rel="stylesheet" href="{% static 'website/css/swiper.css' %}" type="text/css" />
-  <link rel="stylesheet" href="{% static 'website/css/dark.css' %}" type="text/css" />
-  <link rel="stylesheet" href="{% static 'website/css/font-icons.css' %}" type="text/css" />
-  <link rel="stylesheet" href="{% static 'website/css/animate.css' %}" type="text/css" />
-  <link rel="stylesheet" href="{% static 'website/css/magnific-popup.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/swiper.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/dark.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/font-icons.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css" />
 
-  <link rel="stylesheet" href="{% static 'website/css/custom.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Document Title
   ============================================= -->
-  <title>{% block title %}fearandgreed.io{% endblock %}</title>
+  <title>{% block title %}It's a Traders Life{% endblock %}</title>
 
 </head>
 
@@ -43,39 +43,36 @@
         <div class="row justify-content-between">
           <div class="col-12 col-md-auto">
 
-            <!-- Top Links
-            ============================================= -->
+            <!--=========  TOP BAR LINKS  ============================================= -->
             <div class="top-links on-click">
               <ul class="top-links-container">
                 
                 <li class="top-links-item"><a href="{% url 'home' %}">Home</a>
+                  <ul class="top-links-sub-menu">
+                    <li class="top-links-item"><a href="#">About</a></li>
+                    <li class="top-links-item"><a href="#">FAQs</a></li>
+                    <li class="top-links-item"><a href="#">Contact</a></li>
+                  </ul>
                 </li>
+
                 {% if user.is_authenticated %}
-                <li class="top-links-item"><a href="{% url 'add_post' %}">Add Post</a></li>
-                <li class="top-links-item"><a href="{% url 'article_list' %}">List Posts</a></li>
-                <li class="top-links-item"><a href="{% url 'add_category' %}">Add Category</a></li>
-                <!-- <li class="top-links-item"><a href=#>List Categories</a></li> -->
-                <!--
-                <li class="top-links-item"><a href="#">Login</a>
-                  <div class="top-links-section">
-                    <form id="top-login" autocomplete="off">
-                      <div class="form-group">
-                        <label>Username</label>
-                        <input type="email" class="form-control" placeholder="Email address">
-                      </div>
-                      <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password" required="">
-                      </div>
-                      <div class="form-group form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="top-login-checkbox">
-                        <label class="form-check-label" for="top-login-checkbox">Remember Me</label>
-                      </div>
-                      <button class="btn btn-danger btn-block" type="submit">Sign in</button>
-                    </form>
-                  </div>
+                <li class="top-links-item"><a href="{% url 'post_list' %}">Posts</a></li>
+                <li class="top-links-item"><a href="{% url 'category_list' %}">Categories</a></li>
+                <li class="top-links-item"><a href="http://127.0.0.1:8000/admin/" target="_blank">Admin</a></li>
+                
+                <li class="top-links-item"><a href="#">Profile</a>
+                  <ul class="top-links-sub-menu">
+                    <li><a class="top-links-item" href="{% url 'edit_profile' %}">Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    {% if user.profile.id %}
+                      <li><a class="top-links-item" href="{% url 'edit_profile_page' user.profile.id %}">Edit Profile Page</a></li>
+                      <li><a class="top-links-item" href="{% url 'show_profile_page' user.profile.id %}">View Profile Page</a></li>
+                    {% else %}
+                      <li><a class="top-links-item" href="{% url 'create_profile_page' %}">Create Profile Page</a></li>
+                    {% endif %}
+                  </ul>
                 </li>
-              -->
+
                 <li class="top-links-item"><a href="{% url 'logout' %}">Logout</a>
                 </li>
                 {% else %} 
@@ -129,8 +126,7 @@
               </div><!-- #top-search end -->
 
               
-            </div> <
-
+            </div> 
             <div id="primary-menu-trigger">
               <svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
             </div>
@@ -147,39 +143,19 @@
                   <a class="menu-link" href="{% url 'home' %}"><div>Home</div><span>Lets Start</span></a>
                 </li>
                 <li class="menu-item">
+                  <a class="menu-link" href="{% url 'blog' %}"><div>Blog</div><span>It's a Traders Life</span></a>
+                     <ul class='sub-menu-container'>
+                        <!-- Category dropdown list -->
+                        {% for item in all_topics %}
+                          <li class="menu-item">
+                            <a class="menu-link" href="{% url 'category' item|slugify %}"><div>{{ item }}</div></a>
+                           </li>
+                        {% endfor %}
+                      </ul>
+                  </li>
+                <li class="menu-item">
                   <a class="menu-link" href="#"><div>Resources</div><span>Useful Tools</span></a>
                 </li>
-
-
-                <li class="menu-item">
-                  <a class="menu-link" href="{% url 'blog' %}"><div>Topics</div><span>Categories</span></a>
-                    <ul class='sub-menu-container'>
-                      <li class="menu-item">
-                        <a class="menu-link" href="{% url 'blog' %}"><div>Main Blog</div></a>
-                      </li>
-                      <li class="menu-item">
-                        <a class="menu-link" href="{% url 'article_list'%}"><div>Blog List</div></a>
-                      </li>
-                    </ul>
-                </li>
-
-
-                <li class="menu-item">
-                  <a class="menu-link" href="{% url 'blog' %}"><div>Blog</div><span>Share Ideas</span></a>
-                    <ul class='sub-menu-container'>
-                      <li class="menu-item">
-                        <a class="menu-link" href="{% url 'blog' %}"><div>Main Blog</div></a>
-                      </li>
-                      <li class="menu-item">
-                        <a class="menu-link" href="{% url 'article_list'%}"><div>Blog List</div></a>
-                      </li>
-                    </ul>
-                </li>
-
-
-
-
-
                 <li class="menu-item mega-menu">
                   <a class="menu-link" href="#"><div>Markets</div><span>Useful Analytics</span></a>
                 </li>

@@ -5,21 +5,34 @@
 
 {% block content %}
 
-{% include 'header.html' with heading="CATEGORY LIST" subheading="It's a Traders Life" %}
+<!-- BLOG HEADER
+    ============================================= -->
+    <section id="page-title">
+
+      <div class="container clearfix">
+        <h1>Categories              <a href="{% url 'add_category' %}"><button type="button" class="btn btn-primary">Add Category</button></a></h1>
+    </div>
+       
+    </section><!-- #page-title end -->
 
 <section id="content">
-    <div class="content-wrap">
-        <div class="container clearfix">
-            <ul>
-            {% for post in object_list %}
-                <li><a href="{% url 'category' post.pk %}">{{ post.category }}</a> 
-                <!--{{ post.body }} -->
-                </li>
+      <!--<div class="content-wrap">-->>
+      <div class="container clearfix">
+            
+            <br/>
+            {% for item in all_topics %}
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <a href="{% url 'edit_category' item.pk %}"><button type="button" class="btn btn-success">Edit</button></a> 
+                    <a href="{% url 'delete_category' item.pk %}"><button type="button" class="btn btn-danger">Del</button> </a>  
+                </div>
+              
+                <a href="{% url 'category' item|slugify %}"><h3>{{ item }}</h3></a> 
+                
+                
             {% endfor %}
-            </ul>
-        </div>
+       <!-- </div>-->
     </div>
-</div>
+</section>
 
 
 

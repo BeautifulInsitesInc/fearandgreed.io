@@ -1,0 +1,4 @@
+Categories : 
+{% for item in all_topics %}
+  <strong> <a href="{% url 'category' item|slugify %}">{{ item }} | </a></strong>
+{% endfor %}

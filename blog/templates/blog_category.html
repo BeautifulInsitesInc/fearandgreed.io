@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Category {% endblock %}
+
+{% block content %}
+
+<!-- BLOG HEADER
+    ============================================= -->
+    <section id="page-title">
+
+      <div class="container clearfix">
+        <h1>Topic : <strong>{{ category_name }}</strong></h1>
+        <span>Trade to trade well</span></br>
+        <strong> Categories : </strong>
+        {% for item in all_topics %}
+          <a href="{% url 'category' item|slugify %}">{{ item }} | </a>
+       	{% endfor %}
+       	<br/><br/>
+       	Or view <a href="{% url 'blog' %}"><Strong>All Articles</strong></a> by date.
+
+      </div>
+    </section><!-- #page-title end -->
+
+<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+
+					<div class="row gutter-40 col-mb-80">
+						<!-- article Content
+						============================================= -->
+						<div class="postcontent col-lg-9">
+
+							<!-- CATEGORY POSTS
+							============================================= -->
+							<div id="posts" class="post-grid row grid-container gutter-40 clearfix" data-layout="fitRows">
+
+							{% if category_posts %}
+								{% for article in category_posts %}
+									<div class="entry col-md-4 col-sm-6 col-12">
+										<div class="grid-inner">
+											<div class="entry-image">
+												<a href="{% static 'images/fgblue.png' %}" data-lightbox="image"><img src="{% static 'images/fgblue.png' %}" alt="Standard Post with Image"></a>
+											</div>
+											<div class="entry-title">
+												<h2><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></h2>
+											</div>
+											<div class="entry-meta">
+												<ul>
+													<li><i class="icon-calendar3"></i> {{ article.created_at }}</li>
+													{# <li><a href="blog-single.html#comments"> #}
+													<li><i class="icon-comments"></i> 0 </a></li> 
+													<li><i class="icon-folder-open"></i> <a href="{% url 'category' article.category %}">{{ article.category }}</a></li>
+													{% if user.is_authenticated %}
+														<li><small><a href="{% url 'edit_article' article.pk %}">Edit</a> - <a href="{% url 'delete_article' article.pk %}">Delete</a></small></li>
+													{% endif %}
+												</ul>
+											</div>
+											<div class="entry-content">
+												<p>{{ article.snippet | safe}}</p>
+												<a href="{% url 'article_detail' article.pk %}" class="more-link">Read More</a>
+											</div>
+										</div>
+									</div>
+
+
+
+
+
+														<li><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a> - C/{{ article.created_at }} - M/{{ article.updated_ats }} - {{ article.author.first_name }} {{ article.author.last_name }}
+																{% if user.is_authenticated %}
+																	- <small><a href="{% url 'edit_article' article.pk %}">Edit</a> - <a href="{% url 'delete_article' article.pk %}">Delete</a></small><br/>
+																{% endif %}
+
+
+
+							       								{{ article.body| safe |slice:":200" }}
+														</li>
+								{% endfor %}
+												</ul>
+							{% else %}
+								<h2> Sorry, this page does not exist </h2>
+							{% endif %}	
+
+
+
+
+
+
+
+
+	<section id="content">
+		<div class="content-wrap">
+			<div class="container clearfix">
+				{% if category_posts %}
+					<ul>
+						{% for article in category_posts %}
+							<li><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a> - C/{{ article.created_at }} - M/{{ article.updated_ats }} - {{ article.author.first_name }} {{ article.author.last_name }}
+									{% if user.is_authenticated %}
+										- <small><a href="{% url 'edit_article' article.pk %}">Edit</a> - <a href="{% url 'delete_article' article.pk %}">Delete</a></small><br/>
+									{% endif %}
+
+
+
+       								{{ article.body| safe |slice:":200" }}
+							</li>
+						{% endfor %}
+					</ul>
+				{% else %}
+					<h2> Sorry, this page does not exist </h2>
+				{% endif %}	
+			</div>
+		</div>
+	</div>
+-->
+
+{% endblock %}

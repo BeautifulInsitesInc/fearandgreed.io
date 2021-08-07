@@ -5,7 +5,22 @@
 
 {% block content %}
 
-{% include 'header.html' with heading="BLOG" subheading="It's a Traders Life" %}
+<!-- BLOG HEADER
+    ============================================= -->
+    <section id="page-title">
+
+      <div class="container clearfix">
+        <h1>Topic : <strong>{{ category_name }}</strong></h1>
+        <span>It's a Traders Life</span></br>
+        <strong> Categories : </strong>
+        {% for item in all_topics %}
+          <a href="{% url 'category' item|slugify %}">{{ item }} | </a>
+       	{% endfor %}
+      
+
+      </div>
+    </section><!-- #page-title end -->
+
 
 
 <!-- Content
@@ -15,7 +30,7 @@
 				<div class="container clearfix">
 
 					<div class="row gutter-40 col-mb-80">
-						<!-- Post Content
+						<!-- post Content
 						============================================= -->
 						<div class="postcontent col-lg-9">
 
@@ -28,15 +43,18 @@
 									<div class="entry col-md-4 col-sm-6 col-12">
 										<div class="grid-inner">
 											<div class="entry-image">
-												<a href="{% static 'images/fgblue.png' %}" data-lightbox="image"><img src="{% static 'images/fgblue.png' %}" alt="Standard Post with Image"></a>
+												{% if post.header_image %}
+													<a href="{% url 'post_detail' post.pk %}"><img src="{{ post.header_image.url }}" width=100 hight=100 alt="Image"></a>
+												{% endif %}
 											</div>
 											<div class="entry-title">
-												<h2><a href="{% url 'article_detail' post.pk %}">{{ post.title }}</a></h2>
+												<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
 											</div>
 											<div class="entry-meta">
 												<ul>
 													<li><i class="icon-calendar3"></i> {{ post.created_at }}</li>
-													{# <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li> #}
+													{# <li><a href="blog-single.html#comments"> #}
+													<li><i class="icon-comments"></i> 0 </a></li> 
 													<li><i class="icon-folder-open"></i> <a href="{% url 'category' post.category %}">{{ post.category }}</a></li>
 													{% if user.is_authenticated %}
 														<li><small><a href="{% url 'edit_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a></small></li>
@@ -45,7 +63,7 @@
 											</div>
 											<div class="entry-content">
 												<p>{{ post.snippet | safe}}</p>
-												<a href="{% url 'article_detail' post.pk %}" class="more-link">Read More</a>
+												<a href="{% url 'post_detail' post.pk %}" class="more-link">Read More</a>
 											</div>
 										</div>
 									</div>

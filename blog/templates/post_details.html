@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ post.title_tag }} {% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
+
+<!-- =========== Article Details ================================= -->
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<div class="row gutter-40 col-mb-80">
+				<!-- Post Content
+				============================================= -->
+				<div class="postcontent col-lg-9">
+					<div class="single-post mb-0">
+
+						<!-- Single Post
+						============================================= -->
+						<div class="entry clearfix">
+
+							<!--================= Entry Title ============================================= -->
+							<div class="entry-title">
+								<h2>{{ post.title }}</h2> 
+									{% if user.is_authenticated %}
+										{% if user.id == post.author.id %}
+											<a href="{% url 'edit_post' post.pk %}">Edit</a> | 
+											<a href="{% url 'delete_post' post.pk %}">Delete</a>
+										{% endif %}
+									{% endif %}
+							</div><!-- .entry-title end -->
+
+							<!--============= Entry Meta ============================================= -->
+							<div class="entry-meta">
+								<ul>
+									<li><i class="icon-calendar3"></i> {{ post.created_at }}</li>
+									<li><a href="#"><i class="icon-user"></i> {{ post.author.first_name }} {{ post.author.last_name }}</a></li>
+									<li><i class="icon-folder-open"></i> <a href="{% url 'category' post.category %}">{{ post.category }}</a></li>
+									{# <li><a href="#"><i class="icon-comments"></i> 43 Comments</a></li> #}
+									{# <li><a href="#"><i class="icon-camera-retro"></i></a></li> #}
+								</ul>
+							</div><!-- .entry-meta end -->
+
+							<!-- ============ Entry Content ============================================= -->
+							<div class="entry-content mt-0">
+								<!-- Entry Image
+								============================================= -->
+								<div class="entry-image alignleft">
+								<!--<a href="#"><img src="{% static 'images/fgblue.png' %}" alt="Blog Single"></a>-->
+								</div>
+								{{ post.body|safe}}
+								<!-- Post Single - Content End -->
+								<br><br>
+								<hr>
+								<br>
+
+								<!-- ================== LIKES SECTION ===================-->
+								<form action="{% url 'like_post' post.pk %}" method="POST">
+									{% csrf_token %}
+									{% if user.is_authenticated %}
+										{% if liked %}
+											<button type = "submit", name="post_id", value = "{{ post.id }}", class="button button-3d m-0">UnLike</button> 
+										{% else %}
+											<button type = "submit", name="post_id", value = "{{ post.id }}", class="button button-3d m-0">Like</button> 
+										{% endif %}
+									{% else%}
+										<small><a href="{% url 'login' %}">Login</a> to Lke</small>	
+									{% endif %}
+								
+
+									- {{ total_likes }} Likes
+								</form>
+									<br/>
+
+									<!--================= PROFILE ===========================--->		
+									<div class="card mb-3">
+									  <div class="row g-0">
+									    <div class="col-md-2">
+									    	{% if post.author.profile.profile_pic %}
+									      		<img src="{{ post.author.profile.profile_pic.url }}" class="img-fluid rounded-start" alt="...">
+									      	{% else %}
+									      		<img src="{% static '/images/default_profile.jpg' %}" class="img-fluid rounded-start" alt="...">
+									      	{% endif %}
+									    </div>
+									    <div class="col-md-10">
+									      <div class="card-body">
+									        <h5 class="card-title">{{ post.author.first_name }} {{ post.author.last_name}}</h5>
+									        <p class="small text-muted">
+									        	<a href="{% url 'show_profile_page' post.author.profile.id %}">Profile | </a>
+
+									        	{% if post.author.profile.website_url %}
+									        		<a href="{{ post.author.profile.website_url }}">Website</a> | 
+									        	{% endif %}
+
+									        	{% if post.author.profile.facebook_url %}
+									        		<a href="{{ post.author.profile.facebook_url }}">Facebook</a> | 
+									        	{% endif %}
+
+									        	{% if post.author.profile.twitter_url %}
+
+									        		<a href="{{ post.author.profile.twitter_url }}">Twitter</a> | 
+									        	{% endif %}
+
+									        	{% if post.autor.profile.instagram_url %}
+									        		<a href="{{ post.author.profile.instagram_url }}">Instagram</a>
+									        	{% endif %}
+									        </p>
+									        <p class="card-text">Bio: {{ post.author.profile.bio }}</p>
+									      </div>
+									    </div>
+									  </div>
+									</div>
+									<!---End of Profile -->
+
+									<!-- ====================== COMMENTS ====================== -->
+									<hr>
+									<h2> Comments... </h2>
+									{% if not post.comments.all %}
+										No comments yet ... <a href="{% url 'add_comment' post.pk %}">Add One</a>
+									{% else %}
+										{% for comment in post.comments.all %}
+											<a href="{% url 'add_comment' post.pk %}">Add Comment</a>
+											<br/>
+											<br/>
+											<strong>
+												{{ comment.name }} | 
+												{{ comment.created_date }}
+											</strong>
+											<br/>
+											{{ comment.body }}
+											<br/>
+										{% endfor %}
+										<hr>
+									{% endif %}
+																	
+							</div>
+						</div>
+					</div>
+				</div>
+				{% include 'blog_sidebar.html' %}
+			</div>
+		</div>
+	</div>
+</section>
+
+	
+{% endblock %}
+

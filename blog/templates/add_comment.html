@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Add Commnet {% endblock %}
+
+{% block content %}
+
+{% include 'header.html' with heading="ADD COMMENT" subheading="It's a Traders Life" %}
+{% if user.is_authenticated %}
+	<div class="container">
+		<div class="row">
+			<!-- Contact Form Overlay
+			============================================= -->
+			<div class="contact-form-overlay col-md-8 offset-md-2 p-5">
+
+				
+				<div class="fancy-title title-border">
+					<h3>Add Comment</h3><br/>
+				</div>
+				Post : 
+				<br/>
+				Author : {{ user.id}} - {{ user.first_name }} {{ user.last_name }}
+				Post : 
+						<br><br>
+					
+				<form method ="POST" enctype="multipart/form-data"><!-- enctype for image fields-->
+					{% csrf_token %}
+					{{ form.as_p }}
+					<button class="button button-3d m-0" type="submit" id="message-submit" name="message-submit" value="submit">Add Comment</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% else %}
+	<div class="container">
+		You are not allowed here, and you know it!
+	</div>
+{% endif %}
+
+
+{% endblock %}https://www.youtube.com/watch?v=cgSE6PYOHiQ

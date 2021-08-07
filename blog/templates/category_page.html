@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Category {% endblock %}
+
+{% block content %}
+
+<!-- BLOG HEADER
+    ============================================= -->
+    <section id="page-title">
+
+      <div class="container clearfix">
+        <h1>Articles Listed by Topic : </h1>
+        <span>Trade to trade well</span></br>
+
+        <h1><strong>{{ category_name }}</strong></h1>
+        <br>
+        {% for item in all_topics %}
+          <strong><a href="{% url 'category' item|slugify %}">{{ item }} </a></strong><br>
+       	{% endfor %}
+       	<br/>
+       	<a href="{% url 'article_list' %}"><Strong>All Articles</strong></a>
+
+      </div>
+    </section><!-- #page-title end -->
+
+
+<!-- CONTENT - LISTING ARTICLS BY CATEGORY 
+		================================================= --->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+					{% if category_posts %}
+						<ul>
+							{% for article in category_posts %}
+								<li><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a> - C/{{ article.created_at }} - M/{{ article.updated_ats }} - {{ article.author.first_name }} {{ article.author.last_name }}
+										{% if user.is_authenticated %}
+											- <small><a href="{% url 'edit_article' article.pk %}">Edit</a> - <a href="{% url 'delete_article' article.pk %}">Delete</a></small><br/>
+										{% endif %}
+
+
+
+	       								{{ article.snippet| safe |slice:":200" }}
+								</li>
+							{% endfor %}
+						</ul>
+					{% else %}
+						<h2> Sorry, this page does not exist </h2>
+					{% endif %}	
+				</div>
+			</div>
+		</div>
+
+
+
+{% endblock %}
